@@ -5,9 +5,7 @@ import react from '@vitejs/plugin-react';
 export default defineConfig(({ mode }) => {
     const env = loadEnv(mode, '.', '');
     return {
-      // ESTA ES LA LÍNEA QUE FALTABA Y QUE ARREGLA LA PANTALLA NEGRA:
-      base: './', 
-      
+      base: '/motion-advanced-rehab/',
       server: {
         port: 3000,
         host: '0.0.0.0',
