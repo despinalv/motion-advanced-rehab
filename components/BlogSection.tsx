@@ -15,14 +15,14 @@ export const BlogSection: React.FC<BlogSectionProps> = ({ onNavigate, language }
       title: 'Latest Insights',
       viewAll: 'View all articles',
       read: 'Read Article',
-      posts: Object.values(blogPosts.en)
+      posts: Object.values(blogPosts.en).slice(0, 3)
     },
     es: {
       brand: 'The Motion Blog',
       title: 'Últimos Artículos',
       viewAll: 'Ver todos',
       read: 'Leer Artículo',
-      posts: Object.values(blogPosts.es)
+      posts: Object.values(blogPosts.es).slice(0, 3)
     }
   };
 
