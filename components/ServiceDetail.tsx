@@ -9,6 +9,8 @@ interface ServiceDetailProps {
   language: 'en' | 'es';
 }
 
+import { useSEO } from '../hooks/useSEO';
+
 export const ServiceDetail: React.FC<ServiceDetailProps> = ({ serviceId, onNavigate, onBack, language }) => {
 
   const translations = {
@@ -169,6 +171,11 @@ export const ServiceDetail: React.FC<ServiceDetailProps> = ({ serviceId, onNavig
 
   const serviceData = language === 'en' ? serviceDataEn : serviceDataEs;
   const data = serviceData[serviceId] || serviceData['rehab'];
+
+  useSEO({
+    title: `${data.title} | Motion Services`,
+    description: data.description
+  });
 
   return (
     <div className="pt-32 pb-20 min-h-screen animate-[fadeInUp_0.5s_ease-out_forwards]">

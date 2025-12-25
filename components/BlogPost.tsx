@@ -3,9 +3,9 @@ import { ArrowLeft, Calendar, User, Clock, Share2, ArrowRight } from 'lucide-rea
 import { blogPosts } from '../src/data/blogPosts';
 import { Button } from './ui/Button';
 import { useParams, useNavigate } from 'react-router-dom';
+import { useSEO } from '../hooks/useSEO';
 
 interface BlogPostProps {
-    // Props are less relevant now as we use params, but keeping signature for compatibility if needed
     onNavigate?: (target: string, data?: string) => void;
     onBack?: () => void;
     language: 'en' | 'es';
@@ -39,14 +39,19 @@ export const BlogPost: React.FC<BlogPostProps> = ({ onBack, language }) => {
     const t = translations[language];
 
     // Data
-    const postsEn: Record<string, any> = blogPosts.en;
-    const postsEs: Record<string, any> = blogPosts.es;
-
-    const posts = language === 'en' ? postsEn : postsEs;
+    // Determine which language content to use based on prop
+    const posts = language === 'en' ? blogPosts.en : blogPosts.es;
 
     // FIND POST BY SLUG (since 'id' from params is the slug)
     // We search the values to find the matching slug
     const post = Object.values(posts).find((p: any) => p.slug === id) || Object.values(posts)[0];
+
+    useSEO({
+        title: post ? `${post.title} | Motion Blog` : 'Motion Blog',
+        description: post ? post.excerpt : 'Article details'
+    });
+
+    if (!post) return <div>Post not found</div>;
 
     // Calculate Previous and Next Posts
     const allPosts = Object.values(posts);

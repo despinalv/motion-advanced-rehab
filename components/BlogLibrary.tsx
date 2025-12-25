@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { ArrowLeft, ArrowRight, Calendar, User, Search } from 'lucide-react';
 
 import { blogPosts } from '../src/data/blogPosts';
+import { useSEO } from '../hooks/useSEO';
 
 interface BlogLibraryProps {
   onNavigate: (target: string, data?: string) => void;
@@ -11,6 +12,13 @@ interface BlogLibraryProps {
 
 export const BlogLibrary: React.FC<BlogLibraryProps> = ({ onNavigate, onBack, language }) => {
   const [activeCategory, setActiveCategory] = useState(language === 'en' ? 'All' : 'Todos');
+
+  useSEO({
+    title: language === 'en' ? 'Motion Blog | Insights & Research' : 'Motion Blog | Insights e Investigación',
+    description: language === 'en'
+      ? 'Deep dives into biomechanics, rehab science, and high-performance training. Expert articles from the Motion Advanced Rehab team.'
+      : 'Profundizamos en biomecánica, ciencia de rehabilitación y entrenamiento de alto rendimiento. Artículos de expertos del equipo Motion Advanced Rehab.'
+  });
 
   const translations = {
     en: {

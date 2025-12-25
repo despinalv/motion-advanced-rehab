@@ -27,17 +27,28 @@ const ScrollToTop = () => {
 };
 
 // Home Page Component
-const HomePage = ({ language, onNavigate }: { language: 'en' | 'es', onNavigate: (path: string) => void }) => (
-  <>
-    <Hero onNavigate={onNavigate} language={language} />
-    <Method language={language} />
-    <Services onNavigate={onNavigate} language={language} />
-    <Dashboard language={language} />
-    <Testimonials language={language} />
-    <About language={language} />
-    <BlogSection onNavigate={onNavigate} language={language} />
-  </>
-);
+import { useSEO } from './hooks/useSEO';
+
+const HomePage = ({ language, onNavigate }: { language: 'en' | 'es', onNavigate: (path: string) => void }) => {
+  useSEO({
+    title: language === 'en' ? 'Motion Advanced Rehab | Perform at Your Peak' : 'Motion Advanced Rehab | Rinde al Máximo',
+    description: language === 'en'
+      ? 'Evidence-based physiotherapy, biomechanics, and performance training in Panama. Bridge the gap between rehab and high performance.'
+      : 'Fisioterapia basada en evidencia, biomecánica y entrenamiento de rendimiento en Panamá. Une la brecha entre rehabilitación y alto rendimiento.'
+  });
+
+  return (
+    <>
+      <Hero onNavigate={onNavigate} language={language} />
+      <Method language={language} />
+      <Services onNavigate={onNavigate} language={language} />
+      <Dashboard language={language} />
+      <Testimonials language={language} />
+      <About language={language} />
+      <BlogSection onNavigate={onNavigate} language={language} />
+    </>
+  );
+};
 
 function AppContent() {
   const [language, setLanguage] = useState<'en' | 'es'>('es');
