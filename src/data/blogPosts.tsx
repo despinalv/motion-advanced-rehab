@@ -24,7 +24,7 @@ export const blogPosts = {
             category: "Rehab Science",
             readTime: "6 min read",
             author: "Sofia Lopez",
-            image: `${import.meta.env.BASE_URL} images / blog_1.jpg`,
+            image: `${import.meta.env.BASE_URL}images/blog_1.jpg`,
             content: (
                 <>
                     <p className="lead text-xl text-white font-light mb-8">
@@ -49,7 +49,7 @@ export const blogPosts = {
             category: "Biomechanics",
             readTime: "5 min read",
             author: "Sarah Jenkins",
-            image: `${import.meta.env.BASE_URL} images / blog_2.jpg`,
+            image: `${import.meta.env.BASE_URL}images/blog_2.jpg`,
             content: (
                 <>
                     <p className="lead text-xl text-white font-light mb-8">
@@ -71,7 +71,7 @@ export const blogPosts = {
             category: "Performance",
             readTime: "7 min read",
             author: "Mike Ross",
-            image: `${import.meta.env.BASE_URL} images / blog_3.jpg`,
+            image: `${import.meta.env.BASE_URL}images/blog_3.jpg`,
             content: (
                 <>
                     <p className="lead text-xl text-white font-light mb-8">
@@ -92,7 +92,7 @@ export const blogPosts = {
             category: "Education",
             readTime: "8 min read",
             author: "Dr. Alex Thorne",
-            image: `${import.meta.env.BASE_URL} images / blog_4.jpg`,
+            image: `${import.meta.env.BASE_URL}images/blog_4.jpg`,
             content: (
                 <>
                     <p className="lead text-xl text-white font-light mb-8">
@@ -110,7 +110,7 @@ export const blogPosts = {
             category: "Biomechanics",
             readTime: "4 min read",
             author: "Sarah Jenkins",
-            image: `${import.meta.env.BASE_URL} images / blog_5.jpg`,
+            image: `${import.meta.env.BASE_URL}images/blog_5.jpg`,
             content: (
                 <>
                     <p className="lead text-xl text-white font-light mb-8">
@@ -128,7 +128,7 @@ export const blogPosts = {
             category: "Nutrition",
             readTime: "5 min read",
             author: "Mike Ross",
-            image: `${import.meta.env.BASE_URL} images / blog_6.jpg`,
+            image: `${import.meta.env.BASE_URL}images/blog_6.jpg`,
             content: (
                 <>
                     <p className="lead text-xl text-white font-light mb-8">
@@ -148,7 +148,7 @@ export const blogPosts = {
             category: "Ciencia de Rehabilitación",
             readTime: "6 min lectura",
             author: "Sofia Lopez",
-            image: `${import.meta.env.BASE_URL} images / blog_1.jpg`,
+            image: `${import.meta.env.BASE_URL}images/blog_1.jpg`,
             content: (
                 <>
                     <p className="lead text-xl text-white font-light mb-8">
@@ -173,7 +173,7 @@ export const blogPosts = {
             category: "Biomecánica",
             readTime: "5 min lectura",
             author: "Sarah Jenkins",
-            image: `${import.meta.env.BASE_URL} images / blog_2.jpg`,
+            image: `${import.meta.env.BASE_URL}images/blog_2.jpg`,
             content: (
                 <>
                     <p className="lead text-xl text-white font-light mb-8">
@@ -195,7 +195,7 @@ export const blogPosts = {
             category: "Rendimiento",
             readTime: "7 min lectura",
             author: "Mike Ross",
-            image: `${import.meta.env.BASE_URL} images / blog_3.jpg`,
+            image: `${import.meta.env.BASE_URL}images/blog_3.jpg`,
             content: (
                 <>
                     <p className="lead text-xl text-white font-light mb-8">
@@ -213,7 +213,7 @@ export const blogPosts = {
             category: "Educación",
             readTime: "8 min lectura",
             author: "Dr. Alex Thorne",
-            image: `${import.meta.env.BASE_URL} images / blog_4.jpg`,
+            image: `${import.meta.env.BASE_URL}images/blog_4.jpg`,
             content: (
                 <>
                     <p className="lead text-xl text-white font-light mb-8">
@@ -231,7 +231,7 @@ export const blogPosts = {
             category: "Biomecánica",
             readTime: "4 min lectura",
             author: "Sarah Jenkins",
-            image: `${import.meta.env.BASE_URL} images / blog_5.jpg`,
+            image: `${import.meta.env.BASE_URL}images/blog_5.jpg`,
             content: (
                 <>
                     <p className="lead text-xl text-white font-light mb-8">
@@ -249,7 +249,7 @@ export const blogPosts = {
             category: "Nutrición",
             readTime: "5 min lectura",
             author: "Mike Ross",
-            image: `${import.meta.env.BASE_URL} images / blog_6.jpg`,
+            image: `${import.meta.env.BASE_URL}images/blog_6.jpg`,
             content: (
                 <>
                     <p className="lead text-xl text-white font-light mb-8">
