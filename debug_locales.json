@@ -1,0 +1,24 @@
+[
+  {
+    "code": "en-US",
+    "name": "English (United States)",
+    "default": true,
+    "fallbackCode": null,
+    "sys": {
+      "id": "031Z1NCZyi4OpYxVlS6ngg",
+      "type": "Locale",
+      "version": 1
+    }
+  },
+  {
+    "code": "es-HN",
+    "name": "Spanish (Honduras)",
+    "default": false,
+    "fallbackCode": "en-US",
+    "sys": {
+      "id": "031Z2l7hlHuTRQoGkixfQo",
+      "type": "Locale",
+      "version": 1
+    }
+  }
+]

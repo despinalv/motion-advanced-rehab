@@ -42,9 +42,10 @@ interface BlogPostSkeleton {
 
 export const getBlogPosts = async (locale: 'en' | 'es' = 'en'): Promise<BlogPost[]> => {
     try {
+        const localeCode = locale === 'es' ? 'es-HN' : 'en-US';
         const response = await client.getEntries<BlogPostSkeleton>({
             content_type: 'blogPost',
-            locale: locale === 'es' ? 'es' : 'en-US', // Adjust locale codes as needed based on Contentful setup
+            locale: localeCode,
             order: ['-fields.date'],
         });
 
@@ -76,10 +77,11 @@ export const getBlogPosts = async (locale: 'en' | 'es' = 'en'): Promise<BlogPost
 
 export const getBlogPostBySlug = async (slug: string, locale: 'en' | 'es' = 'en'): Promise<BlogPost | null> => {
     try {
+        const localeCode = locale === 'es' ? 'es-HN' : 'en-US';
         const response = await client.getEntries<BlogPostSkeleton>({
             content_type: 'blogPost',
             'fields.slug': slug,
-            locale: locale === 'es' ? 'es' : 'en-US',
+            locale: localeCode,
             limit: 1
         });
 

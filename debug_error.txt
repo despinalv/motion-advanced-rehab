@@ -1,0 +1,28 @@
+{
+  "name": "BadRequest",
+  "message": "{\n  \"status\": 400,\n  \"statusText\": \"Bad Request\",\n  \"message\": \"Unknown locale: es\",\n  \"details\": {},\n  \"request\": {\n    \"url\": \"https://cdn.contentful.com:443/spaces/30cfe3ec4gpl/environments/master/entries\",\n    \"headers\": {\n      \"Accept\": \"application/json, text/plain, */*\",\n      \"Content-Type\": \"application/vnd.contentful.delivery.v1+json\",\n      \"X-Contentful-User-Agent\": \"sdk contentful.js/0.0.0-determined-by-semantic-release; platform node.js/v22.19.0; os Windows/v22.19.0;\",\n      \"Authorization\": \"Bearer ...tQZUI\",\n      \"User-Agent\": \"axios/1.13.2\",\n      \"Accept-Encoding\": \"gzip, compress, deflate, br\"\n    },\n    \"method\": \"get\"\n  },\n  \"requestId\": \"bdba7979-d6db-4afd-ad25-b54b97b5f84c\"\n}"
+}
+BadRequest: {
+  "status": 400,
+  "statusText": "Bad Request",
+  "message": "Unknown locale: es",
+  "details": {},
+  "request": {
+    "url": "https://cdn.contentful.com:443/spaces/30cfe3ec4gpl/environments/master/entries",
+    "headers": {
+      "Accept": "application/json, text/plain, */*",
+      "Content-Type": "application/vnd.contentful.delivery.v1+json",
+      "X-Contentful-User-Agent": "sdk contentful.js/0.0.0-determined-by-semantic-release; platform node.js/v22.19.0; os Windows/v22.19.0;",
+      "Authorization": "Bearer ...tQZUI",
+      "User-Agent": "axios/1.13.2",
+      "Accept-Encoding": "gzip, compress, deflate, br"
+    },
+    "method": "get"
+  },
+  "requestId": "bdba7979-d6db-4afd-ad25-b54b97b5f84c"
+}
+    at errorHandler (D:\Documents\SOFIA\MOTION\webpage\node_modules\contentful\dist\contentful.cjs:21978:17)
+    at get (D:\Documents\SOFIA\MOTION\webpage\node_modules\contentful\dist\contentful.cjs:23130:7)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async internalGetEntries (D:\Documents\SOFIA\MOTION\webpage\node_modules\contentful\dist\contentful.cjs:23239:23)
+    at async run (D:\Documents\SOFIA\MOTION\webpage\debug_contentful_file.cjs:14:28)
