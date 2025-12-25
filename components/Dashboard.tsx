@@ -208,25 +208,25 @@ export const Dashboard: React.FC<DashboardProps> = ({ language }) => {
     'For You': {
       featured: { title: "Hip Mobility Flow", duration: "12 min", level: "Beginner", img: `${import.meta.env.BASE_URL}images/video_mobility.jpg` },
       list: [
-        { title: "Ankle Dorsiflexion", dur: "4 min", locked: false },
-        { title: "T-Spine Rotation", dur: "8 min", locked: false },
-        { title: "Single Leg RDL", dur: "10 min", locked: true }
+        { title: "Ankle Dorsiflexion", dur: "4 min", locked: false, img: `${import.meta.env.BASE_URL}images/service_running.jpg` },
+        { title: "T-Spine Rotation", dur: "8 min", locked: false, img: `${import.meta.env.BASE_URL}images/service_rehab.jpg` },
+        { title: "Single Leg RDL", dur: "10 min", locked: true, img: `${import.meta.env.BASE_URL}images/service_online.jpg` }
       ]
     },
     'Mobility': {
       featured: { title: "Full Body Unlock", duration: "15 min", level: "All Levels", img: `${import.meta.env.BASE_URL}images/video_fullbody.jpg` },
       list: [
-        { title: "90/90 Hip Switch", dur: "5 min", locked: false },
-        { title: "Cat-Cow Flow", dur: "3 min", locked: false },
-        { title: "Deep Squat Hold", dur: "6 min", locked: true }
+        { title: "90/90 Hip Switch", dur: "5 min", locked: false, img: `${import.meta.env.BASE_URL}images/hero_bg.jpg` },
+        { title: "Cat-Cow Flow", dur: "3 min", locked: false, img: `${import.meta.env.BASE_URL}images/service_rehab.jpg` },
+        { title: "Deep Squat Hold", dur: "6 min", locked: true, img: `${import.meta.env.BASE_URL}images/service_running.jpg` }
       ]
     },
     'Strength': {
       featured: { title: "Core Foundations", duration: "20 min", level: "Intermediate", img: `${import.meta.env.BASE_URL}images/video_strength.jpg` },
       list: [
-        { title: "Goblet Squat", dur: "8 min", locked: false },
-        { title: "Pallof Press", dur: "4 min", locked: false },
-        { title: "Romanian Deadlift", dur: "12 min", locked: true }
+        { title: "Goblet Squat", dur: "8 min", locked: false, img: `${import.meta.env.BASE_URL}images/service_online.jpg` },
+        { title: "Pallof Press", dur: "4 min", locked: false, img: `${import.meta.env.BASE_URL}images/blog_1.jpg` },
+        { title: "Romanian Deadlift", dur: "12 min", locked: true, img: `${import.meta.env.BASE_URL}images/blog_2.jpg` }
       ]
     }
   };
@@ -274,6 +274,8 @@ export const Dashboard: React.FC<DashboardProps> = ({ language }) => {
             {currentVideos.list.map((vid, i) => (
               <div key={i} className="flex items-center gap-3 p-3 rounded-lg hover:bg-white/5 transition-colors cursor-pointer group/item">
                 <div className="w-16 h-12 bg-white/10 rounded overflow-hidden flex-shrink-0 relative">
+                  {/* Thumbnail Image */}
+                  <img src={(vid as any).img} alt={vid.title} className="w-full h-full object-cover opacity-80" />
                   {vid.locked && <div className="absolute inset-0 bg-black/60 flex items-center justify-center"><Lock size={12} className="text-white" /></div>}
                 </div>
                 <div className="flex-1">
