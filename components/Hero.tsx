@@ -29,12 +29,12 @@ export const Hero: React.FC<HeroProps> = ({ onNavigate, language }) => {
 
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden bg-black">
-      
+
       {/* Background Content */}
       <div className="absolute inset-0 z-0">
-        <img 
-          src="https://images.unsplash.com/photo-1550259979-ed79b48d2a30?q=80&w=2668&auto=format&fit=crop" 
-          alt="Athlete focused" 
+        <img
+          src={`${import.meta.env.BASE_URL}images/hero_bg.jpg`}
+          alt="Athlete focused"
           className="w-full h-full object-cover opacity-50 animate-scale-in hero-mask"
         />
         <div className="absolute inset-0 bg-black/20"></div>
@@ -42,7 +42,7 @@ export const Hero: React.FC<HeroProps> = ({ onNavigate, language }) => {
 
       {/* Content */}
       <div className="container mx-auto px-6 max-w-5xl relative z-10 flex flex-col items-start text-left md:items-center md:text-center mt-12">
-        
+
         <div className="opacity-0 animate-[fadeInUp_1s_ease-out_forwards_0.2s]">
           <h1 className="text-6xl md:text-8xl lg:text-9xl font-semibold text-white tracking-tighter leading-none -mb-2 md:-mb-4">
             {t.line1}
@@ -55,27 +55,27 @@ export const Hero: React.FC<HeroProps> = ({ onNavigate, language }) => {
         <p className="opacity-0 animate-[fadeInUp_1s_ease-out_forwards_0.5s] text-lg md:text-xl text-gray-300 mb-10 max-w-lg font-normal leading-relaxed tracking-tight">
           {language === 'en' ? (
             <>
-            Clinical biomechanics meets high-performance training. 
-            <span className="text-white/80 block mt-1">Evidence-based protocols. Lasting results.</span>
+              Clinical biomechanics meets high-performance training.
+              <span className="text-white/80 block mt-1">Evidence-based protocols. Lasting results.</span>
             </>
           ) : (
-             <>
-             Biomecánica clínica y entrenamiento de alto rendimiento.
-             <span className="text-white/80 block mt-1">Protocolos basados en evidencia. Resultados duraderos.</span>
-             </>
+            <>
+              Biomecánica clínica y entrenamiento de alto rendimiento.
+              <span className="text-white/80 block mt-1">Protocolos basados en evidencia. Resultados duraderos.</span>
+            </>
           )}
         </p>
-        
+
         <div className="opacity-0 animate-[fadeInUp_1s_ease-out_forwards_0.7s] flex flex-col sm:flex-row gap-5 items-start sm:items-center">
-          <Button 
-            variant="primary" 
+          <Button
+            variant="primary"
             className="pl-8 pr-6 group shadow-[0_0_20px_rgba(255,255,255,0.1)] hover:shadow-[0_0_25px_rgba(255,255,255,0.2)]"
             onClick={() => onNavigate('contact')}
           >
-            {t.cta1} <ArrowRight size={16} className="inline ml-2 group-hover:translate-x-1 transition-transform"/>
+            {t.cta1} <ArrowRight size={16} className="inline ml-2 group-hover:translate-x-1 transition-transform" />
           </Button>
-          <Button 
-            variant="ghost" 
+          <Button
+            variant="ghost"
             className="text-white hover:text-motion-accent transition-colors"
             onClick={() => onNavigate('#method')}
           >
