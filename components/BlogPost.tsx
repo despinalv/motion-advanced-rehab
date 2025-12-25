@@ -1,16 +1,20 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { ArrowLeft, Calendar, User, Clock, Share2, ArrowRight } from 'lucide-react';
 import { blogPosts } from '../src/data/blogPosts';
 import { Button } from './ui/Button';
+import { useParams, useNavigate } from 'react-router-dom';
 
 interface BlogPostProps {
-    postId: string;
-    onNavigate: (target: string, data?: string) => void;
-    onBack: () => void;
+    // Props are less relevant now as we use params, but keeping signature for compatibility if needed
+    onNavigate?: (target: string, data?: string) => void;
+    onBack?: () => void;
     language: 'en' | 'es';
 }
 
-export const BlogPost: React.FC<BlogPostProps> = ({ postId, onNavigate, onBack, language }) => {
+export const BlogPost: React.FC<BlogPostProps> = ({ onBack, language }) => {
+    const { id } = useParams<{ id: string }>(); // This 'id' is actually the slug
+    const navigate = useNavigate();
+
     const translations = {
         en: {
             back: 'Back to Journal',
@@ -39,17 +43,26 @@ export const BlogPost: React.FC<BlogPostProps> = ({ postId, onNavigate, onBack, 
     const postsEs: Record<string, any> = blogPosts.es;
 
     const posts = language === 'en' ? postsEn : postsEs;
-    const post = posts[postId] || posts['1'];
+
+    // FIND POST BY SLUG (since 'id' from params is the slug)
+    // We search the values to find the matching slug
+    const post = Object.values(posts).find((p: any) => p.slug === id) || Object.values(posts)[0];
 
     // Calculate Previous and Next Posts
-    const postIds = Object.keys(posts).sort(); // Ensure order 1,2,3...
-    const currentIndex = postIds.indexOf(postId);
+    const allPosts = Object.values(posts);
+    const currentIndex = allPosts.findIndex((p: any) => p.slug === id);
 
-    const prevPostId = currentIndex > 0 ? postIds[currentIndex - 1] : null;
-    const nextPostId = currentIndex < postIds.length - 1 ? postIds[currentIndex + 1] : null;
+    const prevPost = currentIndex > 0 ? allPosts[currentIndex - 1] : null;
+    const nextPost = currentIndex < allPosts.length - 1 ? allPosts[currentIndex + 1] : null;
 
-    const prevPost = prevPostId ? posts[prevPostId] : null;
-    const nextPost = nextPostId ? posts[nextPostId] : null;
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [id]);
+
+    const handleBack = () => {
+        if (onBack) onBack();
+        else navigate('/blog');
+    }
 
     return (
         <div className="pt-32 pb-20 min-h-screen animate-[fadeInUp_0.5s_ease-out_forwards]">
@@ -58,7 +71,7 @@ export const BlogPost: React.FC<BlogPostProps> = ({ postId, onNavigate, onBack, 
                 {/* Navigation Top */}
                 <div className="flex justify-between items-center mb-8">
                     <button
-                        onClick={onBack}
+                        onClick={handleBack}
                         className="flex items-center text-motion-muted hover:text-white transition-colors group"
                     >
                         <ArrowLeft size={20} className="mr-2 group-hover:-translate-x-1 transition-transform" />
@@ -114,14 +127,14 @@ export const BlogPost: React.FC<BlogPostProps> = ({ postId, onNavigate, onBack, 
                     <div className="text-left">
                         {prevPost ? (
                             <button
-                                onClick={() => onNavigate('blog-post', prevPost.id)}
-                                className="group w-full text-left"
+                                onClick={() => navigate(`/blog/${(prevPost as any).slug}`)}
+                                className="group w-full text-left bg-transparent border-none p-0 cursor-pointer"
                             >
                                 <span className="flex items-center text-xs text-motion-muted uppercase tracking-widest mb-2 group-hover:text-motion-accent transition-colors">
                                     <ArrowLeft size={14} className="mr-2 group-hover:-translate-x-1 transition-transform" /> {t.prev}
                                 </span>
                                 <h4 className="text-white font-medium text-lg leading-tight group-hover:text-gray-300 transition-colors line-clamp-2">
-                                    {prevPost.title}
+                                    {(prevPost as any).title}
                                 </h4>
                             </button>
                         ) : (
@@ -131,14 +144,14 @@ export const BlogPost: React.FC<BlogPostProps> = ({ postId, onNavigate, onBack, 
                     <div className="text-right">
                         {nextPost ? (
                             <button
-                                onClick={() => onNavigate('blog-post', nextPost.id)}
-                                className="group w-full text-right flex flex-col items-end"
+                                onClick={() => navigate(`/blog/${(nextPost as any).slug}`)}
+                                className="group w-full text-right flex flex-col items-end bg-transparent border-none p-0 cursor-pointer"
                             >
                                 <span className="flex items-center text-xs text-motion-muted uppercase tracking-widest mb-2 group-hover:text-motion-accent transition-colors">
                                     {t.next} <ArrowRight size={14} className="ml-2 group-hover:translate-x-1 transition-transform" />
                                 </span>
                                 <h4 className="text-white font-medium text-lg leading-tight group-hover:text-gray-300 transition-colors line-clamp-2">
-                                    {nextPost.title}
+                                    {(nextPost as any).title}
                                 </h4>
                             </button>
                         ) : (
@@ -153,7 +166,7 @@ export const BlogPost: React.FC<BlogPostProps> = ({ postId, onNavigate, onBack, 
                     <p className="text-motion-muted mb-8 max-w-lg mx-auto">
                         {t.join}
                     </p>
-                    <Button onClick={() => onNavigate('contact')}>
+                    <Button onClick={() => navigate('/contact')}>
                         {t.book}
                     </Button>
                 </div>

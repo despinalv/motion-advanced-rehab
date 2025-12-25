@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Globe, Check } from 'lucide-react';
+import { Link, useLocation } from 'react-router-dom';
 import { Button } from './ui/Button';
 
 interface NavbarProps {
@@ -13,6 +14,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPage, languag
   const [isOpen, setIsOpen] = useState(false);
   const [isLangOpen, setIsLangOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -43,7 +45,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPage, languag
 
   const t = translations[language];
 
-  // Reordered: About Us is now last, and href is an anchor tag
   const navLinks = [
     { name: t.method, href: '#method' },
     { name: t.services, href: '#services' },
@@ -61,16 +62,16 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPage, languag
   const selectLanguage = (lang: 'en' | 'es') => {
     setLanguage(lang);
     setIsLangOpen(false);
-    setIsOpen(false); // Close mobile menu if open
+    setIsOpen(false);
   };
 
   return (
     <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${scrolled ? 'bg-motion-black/70 backdrop-blur-2xl border-b border-white/5 py-4' : 'bg-transparent py-6'}`}>
       <div className="container mx-auto px-6 max-w-7xl flex justify-between items-center">
         {/* Logo */}
-        <button onClick={() => onNavigate('home')} className="flex items-center gap-2 group focus:outline-none">
+        <Link to="/" onClick={() => setIsOpen(false)} className="flex items-center gap-2 group focus:outline-none">
           <img src={`${import.meta.env.BASE_URL}images/logo_white.png`} alt="Motion" className="h-8 md:h-10 w-auto opacity-90 group-hover:opacity-100 transition-opacity" />
-        </button>
+        </Link>
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center space-x-8">
@@ -135,7 +136,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPage, languag
           >
             {language === 'en' ? 'EN' : 'ES'}
           </button>
-          {/* Mobile Language Dropdown */}
+
           {isLangOpen && (
             <>
               <div className="fixed inset-0 z-40" onClick={() => setIsLangOpen(false)}></div>

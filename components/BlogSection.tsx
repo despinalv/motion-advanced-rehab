@@ -31,7 +31,7 @@ export const BlogSection: React.FC<BlogSectionProps> = ({ onNavigate, language }
   const renderPost = (post: typeof t.posts[0]) => (
     <article
       key={post.id}
-      onClick={() => onNavigate('blog-post', post.id)}
+      onClick={() => onNavigate('blog-post', post.slug)}
       className="group cursor-pointer flex flex-col h-full w-full"
     >
       <div className="relative overflow-hidden rounded-2xl mb-6 aspect-[4/3]">

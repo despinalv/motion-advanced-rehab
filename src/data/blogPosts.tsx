@@ -2,6 +2,7 @@ import React from 'react';
 
 export interface BlogPostData {
     id: string;
+    slug: string;
     title: string;
     excerpt?: string; // Optional because full post might not need it duplicated if unused
     date: string;
@@ -16,13 +17,14 @@ export const blogPosts = {
     en: {
         '1': {
             id: '1',
+            slug: 'science-of-active-recovery',
             title: "Why Rest is Rust: The Science of Active Recovery",
             excerpt: "Bed rest is outdated. Discover how controlled movement accelerates tissue repair and reduces downtime after injury.",
             date: "Dec 25, 2025",
             category: "Rehab Science",
             readTime: "6 min read",
             author: "Sofia Lopez",
-            image: `${import.meta.env.BASE_URL}images/blog_1.jpg`,
+            image: `${import.meta.env.BASE_URL} images / blog_1.jpg`,
             content: (
                 <>
                     <p className="lead text-xl text-white font-light mb-8">
@@ -40,13 +42,14 @@ export const blogPosts = {
         },
         '2': {
             id: '2',
+            slug: 'myth-of-perfect-posture',
             title: "The Myth of 'Perfect' Posture",
             excerpt: "Stop obsessing over alignment. Your next posture is your best posture. Learn why variability matters more than rigidity.",
             date: "Sep 28, 2024",
             category: "Biomechanics",
             readTime: "5 min read",
             author: "Sarah Jenkins",
-            image: `${import.meta.env.BASE_URL}images/blog_2.jpg`,
+            image: `${import.meta.env.BASE_URL} images / blog_2.jpg`,
             content: (
                 <>
                     <p className="lead text-xl text-white font-light mb-8">
@@ -61,13 +64,14 @@ export const blogPosts = {
         },
         '3': {
             id: '3',
+            slug: 'zone-2-training-strength',
             title: "Zone 2 Training for Strength Athletes",
             excerpt: "You lift heavy, but is your engine holding you back? How low-intensity cardio unlocks higher strength outputs.",
             date: "Sep 15, 2024",
             category: "Performance",
             readTime: "7 min read",
             author: "Mike Ross",
-            image: `${import.meta.env.BASE_URL}images/blog_3.jpg`,
+            image: `${import.meta.env.BASE_URL} images / blog_3.jpg`,
             content: (
                 <>
                     <p className="lead text-xl text-white font-light mb-8">
@@ -81,13 +85,14 @@ export const blogPosts = {
         },
         '4': {
             id: '4',
+            slug: 'understanding-pain-science',
             title: "Understanding Pain Science",
             excerpt: "Pain is an output of the brain, designed to protect you. It does not always equal tissue damage.",
             date: "Aug 22, 2024",
             category: "Education",
             readTime: "8 min read",
             author: "Dr. Alex Thorne",
-            image: `${import.meta.env.BASE_URL}images/blog_4.jpg`,
+            image: `${import.meta.env.BASE_URL} images / blog_4.jpg`,
             content: (
                 <>
                     <p className="lead text-xl text-white font-light mb-8">
@@ -98,13 +103,14 @@ export const blogPosts = {
         },
         '5': {
             id: '5',
+            slug: 'mobility-vs-flexibility',
             title: "Mobility vs. Flexibility",
             excerpt: "Flexibility is passive range of motion. Mobility is active control over that range.",
             date: "Aug 10, 2024",
             category: "Biomechanics",
             readTime: "4 min read",
             author: "Sarah Jenkins",
-            image: `${import.meta.env.BASE_URL}images/blog_5.jpg`,
+            image: `${import.meta.env.BASE_URL} images / blog_5.jpg`,
             content: (
                 <>
                     <p className="lead text-xl text-white font-light mb-8">
@@ -115,13 +121,14 @@ export const blogPosts = {
         },
         '6': {
             id: '6',
+            slug: 'nutrition-tendon-health',
             title: "Nutrition for Tendon Health",
             excerpt: "Tendons recover slowly due to poor blood supply. Nutrition can give them a nudge.",
             date: "Jul 15, 2024",
             category: "Nutrition",
             readTime: "5 min read",
             author: "Mike Ross",
-            image: `${import.meta.env.BASE_URL}images/blog_6.jpg`,
+            image: `${import.meta.env.BASE_URL} images / blog_6.jpg`,
             content: (
                 <>
                     <p className="lead text-xl text-white font-light mb-8">
@@ -134,13 +141,14 @@ export const blogPosts = {
     es: {
         '1': {
             id: '1',
+            slug: 'ciencia-recuperacion-activa',
             title: "Por qué el Reposo es Óxido: La Ciencia de la Recuperación Activa",
             excerpt: "El reposo en cama es obsoleto. Descubre cómo el movimiento controlado acelera la reparación de tejidos.",
             date: "25 Dec, 2025",
             category: "Ciencia de Rehabilitación",
             readTime: "6 min lectura",
             author: "Sofia Lopez",
-            image: `${import.meta.env.BASE_URL}images/blog_1.jpg`,
+            image: `${import.meta.env.BASE_URL} images / blog_1.jpg`,
             content: (
                 <>
                     <p className="lead text-xl text-white font-light mb-8">
@@ -158,13 +166,14 @@ export const blogPosts = {
         },
         '2': {
             id: '2',
+            slug: 'mito-postura-perfecta',
             title: "El Mito de la Postura 'Perfecta'",
             excerpt: "Deja de obsesionarte con la alineación. Tu próxima postura es tu mejor postura. Aprende por qué la variabilidad importa más.",
             date: "28 Sep, 2024",
             category: "Biomecánica",
             readTime: "5 min lectura",
             author: "Sarah Jenkins",
-            image: `${import.meta.env.BASE_URL}images/blog_2.jpg`,
+            image: `${import.meta.env.BASE_URL} images / blog_2.jpg`,
             content: (
                 <>
                     <p className="lead text-xl text-white font-light mb-8">
@@ -179,13 +188,14 @@ export const blogPosts = {
         },
         '3': {
             id: '3',
+            slug: 'entrenamiento-zona-2-fuerza',
             title: "Entrenamiento en Zona 2 para Atletas de Fuerza",
             excerpt: "Levantas pesado, pero ¿tu motor te limita? Cómo el cardio de baja intensidad desbloquea mayor fuerza.",
             date: "15 Sep, 2024",
             category: "Rendimiento",
             readTime: "7 min lectura",
             author: "Mike Ross",
-            image: `${import.meta.env.BASE_URL}images/blog_3.jpg`,
+            image: `${import.meta.env.BASE_URL} images / blog_3.jpg`,
             content: (
                 <>
                     <p className="lead text-xl text-white font-light mb-8">
@@ -196,13 +206,14 @@ export const blogPosts = {
         },
         '4': {
             id: '4',
+            slug: 'entendiendo-ciencia-dolor',
             title: "Entendiendo la Ciencia del Dolor",
             excerpt: "El dolor es una salida del cerebro, diseñada para protegerte. No siempre es igual a daño tisular.",
             date: "22 Ago, 2024",
             category: "Educación",
             readTime: "8 min lectura",
             author: "Dr. Alex Thorne",
-            image: `${import.meta.env.BASE_URL}images/blog_4.jpg`,
+            image: `${import.meta.env.BASE_URL} images / blog_4.jpg`,
             content: (
                 <>
                     <p className="lead text-xl text-white font-light mb-8">
@@ -213,13 +224,14 @@ export const blogPosts = {
         },
         '5': {
             id: '5',
+            slug: 'movilidad-vs-flexibilidad',
             title: "Movilidad vs. Flexibilidad",
             excerpt: "La flexibilidad es rango de movimiento pasivo. La movilidad es control activo sobre ese rango.",
             date: "10 Ago, 2024",
             category: "Biomecánica",
             readTime: "4 min lectura",
             author: "Sarah Jenkins",
-            image: `${import.meta.env.BASE_URL}images/blog_5.jpg`,
+            image: `${import.meta.env.BASE_URL} images / blog_5.jpg`,
             content: (
                 <>
                     <p className="lead text-xl text-white font-light mb-8">
@@ -230,13 +242,14 @@ export const blogPosts = {
         },
         '6': {
             id: '6',
+            slug: 'nutricion-salud-tendones',
             title: "Nutrición para la Salud de los Tendones",
             excerpt: "Los tendones se recuperan lentamente debido al pobre suministro de sangre. La nutrición puede darles un empujón.",
             date: "15 Jul, 2024",
             category: "Nutrición",
             readTime: "5 min lectura",
             author: "Mike Ross",
-            image: `${import.meta.env.BASE_URL}images/blog_6.jpg`,
+            image: `${import.meta.env.BASE_URL} images / blog_6.jpg`,
             content: (
                 <>
                     <p className="lead text-xl text-white font-light mb-8">
