@@ -1,7 +1,7 @@
 import React from 'react';
-import { ArrowRight, Calendar, User } from 'lucide-react';
+import { ArrowRight, Calendar, User, Loader2 } from 'lucide-react';
 import { Carousel } from './ui/Carousel';
-import { blogPosts } from '../src/data/blogPosts';
+import { useBlogPosts } from '../hooks/useBlogPosts';
 
 interface BlogSectionProps {
   onNavigate: (target: string, data?: string) => void;
@@ -9,37 +9,46 @@ interface BlogSectionProps {
 }
 
 export const BlogSection: React.FC<BlogSectionProps> = ({ onNavigate, language }) => {
+  const { posts, loading } = useBlogPosts(language);
+
   const translations = {
     en: {
       brand: 'The Motion Blog',
       title: 'Latest Insights',
       viewAll: 'View all articles',
       read: 'Read Article',
-      posts: Object.values(blogPosts.en).slice(0, 3)
+      loading: 'Loading articles...'
     },
     es: {
       brand: 'The Motion Blog',
       title: 'Últimos Artículos',
       viewAll: 'Ver todos',
       read: 'Leer Artículo',
-      posts: Object.values(blogPosts.es).slice(0, 3)
+      loading: 'Cargando artículos...'
     }
   };
 
   const t = translations[language];
+  const displayPosts = posts.slice(0, 3); // Show top 3
 
-  const renderPost = (post: typeof t.posts[0]) => (
+  const renderPost = (post: typeof displayPosts[0]) => (
     <article
       key={post.id}
       onClick={() => onNavigate('blog-post', post.slug)}
       className="group cursor-pointer flex flex-col h-full w-full"
     >
       <div className="relative overflow-hidden rounded-2xl mb-6 aspect-[4/3]">
-        <img
-          src={post.image}
-          alt={post.title}
-          className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out"
-        />
+        {post.image ? (
+          <img
+            src={post.image}
+            alt={post.title}
+            className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out"
+          />
+        ) : (
+          <div className="w-full h-full bg-white/10 flex items-center justify-center text-motion-muted">
+            No Image
+          </div>
+        )}
         <div className="absolute top-4 left-4 bg-black/60 backdrop-blur-md px-3 py-1 rounded-full border border-white/10">
           <span className="text-xs font-medium text-white">{post.category}</span>
         </div>
@@ -48,7 +57,7 @@ export const BlogSection: React.FC<BlogSectionProps> = ({ onNavigate, language }
       <div className="flex items-center gap-4 text-xs text-motion-muted mb-3">
         <div className="flex items-center gap-1">
           <Calendar size={12} />
-          <span>{post.date}</span>
+          <span>{new Date(post.date).toLocaleDateString()}</span>
         </div>
         <div className="flex items-center gap-1">
           <User size={12} />
@@ -86,21 +95,30 @@ export const BlogSection: React.FC<BlogSectionProps> = ({ onNavigate, language }
           </button>
         </div>
 
-        {/* Desktop Grid */}
-        <div className="hidden md:grid md:grid-cols-3 gap-8">
-          {t.posts.map((post, index) => (
-            <div key={post.id} className="reveal-on-scroll" style={{ transitionDelay: `${index * 100}ms` }}>
-              {renderPost(post)}
+        {loading ? (
+          <div className="flex flex-col items-center justify-center py-20 text-motion-muted">
+            <Loader2 className="w-8 h-8 animate-spin mb-4" />
+            <p>{t.loading}</p>
+          </div>
+        ) : (
+          <>
+            {/* Desktop Grid */}
+            <div className="hidden md:grid md:grid-cols-3 gap-8">
+              {displayPosts.map((post, index) => (
+                <div key={post.id} className="reveal-on-scroll" style={{ transitionDelay: `${index * 100}ms` }}>
+                  {renderPost(post)}
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
 
-        {/* Mobile Carousel */}
-        <Carousel
-          items={t.posts}
-          renderItem={renderPost}
-          className="reveal-on-scroll"
-        />
+            {/* Mobile Carousel */}
+            <Carousel
+              items={displayPosts}
+              renderItem={renderPost}
+              className="reveal-on-scroll"
+            />
+          </>
+        )}
 
         <div className="mt-12 md:hidden flex justify-center">
           <button
