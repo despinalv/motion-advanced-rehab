@@ -66,7 +66,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPage, languag
   };
 
   return (
-    <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${scrolled ? 'bg-motion-black/70 backdrop-blur-2xl border-b border-white/5 py-4' : 'bg-transparent py-6'}`}>
+    <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${scrolled ? 'bg-motion-black/70 backdrop-blur-2xl py-4' : 'bg-transparent py-6'}`}>
       <div className="container mx-auto px-6 max-w-7xl flex justify-between items-center">
         {/* Logo */}
         <Link to="/" onClick={() => setIsOpen(false)} className="flex items-center gap-2 group focus:outline-none">
