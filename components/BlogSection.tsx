@@ -1,6 +1,7 @@
 import React from 'react';
 import { ArrowRight, Calendar, User } from 'lucide-react';
 import { Carousel } from './ui/Carousel';
+import { blogPosts } from '../src/data/blogPosts';
 
 interface BlogSectionProps {
   onNavigate: (target: string, data?: string) => void;
@@ -14,70 +15,14 @@ export const BlogSection: React.FC<BlogSectionProps> = ({ onNavigate, language }
       title: 'Latest Insights',
       viewAll: 'View all articles',
       read: 'Read Article',
-      posts: [
-        {
-          id: '1',
-          title: "Why Rest is Rust: The Science of Active Recovery",
-          excerpt: "Bed rest is outdated. Discover how controlled movement accelerates tissue repair and reduces downtime after injury.",
-          date: "Oct 12, 2024",
-          category: "Rehab Science",
-          image: `${import.meta.env.BASE_URL}images/blog_1.jpg`,
-          author: "Dr. Alex Thorne"
-        },
-        {
-          id: '2',
-          title: "The Myth of 'Perfect' Posture",
-          excerpt: "Stop obsessing over alignment. Your next posture is your best posture. Learn why variability matters more than rigidity.",
-          date: "Sep 28, 2024",
-          category: "Biomechanics",
-          image: `${import.meta.env.BASE_URL}images/blog_2.jpg`,
-          author: "Sarah Jenkins"
-        },
-        {
-          id: '3',
-          title: "Zone 2 Training for Strength Athletes",
-          excerpt: "You lift heavy, but is your engine holding you back? How low-intensity cardio unlocks higher strength outputs.",
-          date: "Sep 15, 2024",
-          category: "Performance",
-          image: `${import.meta.env.BASE_URL}images/blog_3.jpg`,
-          author: "Mike Ross"
-        }
-      ]
+      posts: Object.values(blogPosts.en)
     },
     es: {
       brand: 'The Motion Blog',
       title: 'Últimos Artículos',
       viewAll: 'Ver todos',
       read: 'Leer Artículo',
-      posts: [
-        {
-          id: '1',
-          title: "Por qué el Reposo es Óxido: La Ciencia de la Recuperación Activa",
-          excerpt: "El reposo en cama es obsoleto. Descubre cómo el movimiento controlado acelera la reparación de tejidos.",
-          date: "12 Oct, 2024",
-          category: "Ciencia de Rehabilitación",
-          image: `${import.meta.env.BASE_URL}images/blog_1.jpg`,
-          author: "Dr. Alex Thorne"
-        },
-        {
-          id: '2',
-          title: "El Mito de la Postura 'Perfecta'",
-          excerpt: "Deja de obsesionarte con la alineación. Tu próxima postura es tu mejor postura. Aprende por qué la variabilidad importa más.",
-          date: "28 Sep, 2024",
-          category: "Biomecánica",
-          image: `${import.meta.env.BASE_URL}images/blog_2.jpg`,
-          author: "Sarah Jenkins"
-        },
-        {
-          id: '3',
-          title: "Entrenamiento en Zona 2 para Atletas de Fuerza",
-          excerpt: "Levantas pesado, pero ¿tu motor te limita? Cómo el cardio de baja intensidad desbloquea mayor fuerza.",
-          date: "15 Sep, 2024",
-          category: "Rendimiento",
-          image: `${import.meta.env.BASE_URL}images/blog_3.jpg`,
-          author: "Mike Ross"
-        }
-      ]
+      posts: Object.values(blogPosts.es)
     }
   };
 
