@@ -40,7 +40,7 @@ const HomePage = ({ language, onNavigate }: { language: 'en' | 'es', onNavigate:
 );
 
 function AppContent() {
-  const [language, setLanguage] = useState<'en' | 'es'>('en');
+  const [language, setLanguage] = useState<'en' | 'es'>('es');
   const navigate = useNavigate();
   const location = useLocation();
 

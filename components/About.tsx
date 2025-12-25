@@ -26,7 +26,7 @@ export const About: React.FC<AboutProps> = ({ language }) => {
                     bio: "Specializing in the transition from injury to peak athletic performance."
                 },
                 {
-                    name: "Maria J. López",
+                    name: "Maria J. Palma",
                     role: "Physiotherapist",
                     specialty: "Master in Neurological Physiotherapy",
                     image: `${import.meta.env.BASE_URL}images/team_maria.jpg`,
@@ -59,7 +59,7 @@ export const About: React.FC<AboutProps> = ({ language }) => {
                     bio: "Especialista en la transición desde la lesión hasta el máximo rendimiento deportivo."
                 },
                 {
-                    name: "Maria J. López",
+                    name: "Maria J. Palma",
                     role: "Fisioterapeuta",
                     specialty: "Máster en Fisioterapia Neurológica",
                     image: `${import.meta.env.BASE_URL}images/team_maria.jpg`,

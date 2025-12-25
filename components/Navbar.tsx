@@ -49,8 +49,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPage, languag
     { name: t.method, href: '#method' },
     { name: t.services, href: '#services' },
     { name: t.app, href: '#dashboard' },
-    { name: t.blog, href: '#blog' },
     { name: t.about, href: '#about' },
+    { name: t.blog, href: '#blog' },
   ];
 
   const handleLinkClick = (e: React.MouseEvent, href: string) => {
@@ -80,9 +80,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPage, languag
               key={link.name}
               href={link.href}
               onClick={(e) => handleLinkClick(e, link.href)}
-              className="text-xs font-medium text-motion-text/80 hover:text-white transition-colors tracking-wide"
+              className="relative group text-xs font-medium text-motion-text/80 hover:text-white transition-colors tracking-wide py-1"
             >
               {link.name}
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-motion-accent transition-all duration-300 group-hover:w-full"></span>
             </a>
           ))}
 
