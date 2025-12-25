@@ -69,7 +69,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPage, languag
       <div className="container mx-auto px-6 max-w-7xl flex justify-between items-center">
         {/* Logo */}
         <button onClick={() => onNavigate('home')} className="flex items-center gap-2 group focus:outline-none">
-          <img src={`${import.meta.env.BASE_URL}public/images/logo_white.png`} alt="Motion" className="h-8 md:h-10 w-auto opacity-90 group-hover:opacity-100 transition-opacity" />
+          <img src={`${import.meta.env.BASE_URL}images/logo_white.png`} alt="Motion" className="h-8 md:h-10 w-auto opacity-90 group-hover:opacity-100 transition-opacity" />
         </button>
 
         {/* Desktop Nav */}
