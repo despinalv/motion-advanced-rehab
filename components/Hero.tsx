@@ -44,7 +44,7 @@ export const Hero: React.FC<HeroProps> = ({ onNavigate, language }) => {
       <div className="container mx-auto px-6 max-w-5xl relative z-10 flex flex-col items-start text-left md:items-center md:text-center mt-12">
 
         <div className="opacity-0 animate-[fadeInUp_1s_ease-out_forwards_0.2s]">
-          <h1 className="text-6xl md:text-8xl lg:text-9xl font-semibold text-black tracking-tighter leading-none -mb-2 md:-mb-4">
+          <h1 className="text-6xl md:text-8xl lg:text-9xl font-semibold text-motion-muted tracking-tighter leading-none -mb-2 md:-mb-4">
             {t.line1}
           </h1>
           <h1 className="text-6xl md:text-8xl lg:text-9xl font-semibold text-white tracking-tighter leading-none mb-8">
