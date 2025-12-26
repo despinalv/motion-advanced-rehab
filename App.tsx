@@ -14,6 +14,8 @@ import { BlogSection } from './components/BlogSection';
 import { BlogLibrary } from './components/BlogLibrary';
 import { BlogPost } from './components/BlogPost';
 import { About } from './components/About';
+import { useSEO } from './hooks/useSEO';
+import { StructuredData } from './components/SEO/StructuredData';
 
 // Scroll restoration component
 const ScrollToTop = () => {
@@ -27,14 +29,13 @@ const ScrollToTop = () => {
 };
 
 // Home Page Component
-import { useSEO } from './hooks/useSEO';
 
 const HomePage = ({ language, onNavigate }: { language: 'en' | 'es', onNavigate: (path: string) => void }) => {
   useSEO({
-    title: language === 'en' ? 'Motion Advanced Rehab | Perform at Your Peak' : 'Motion Advanced Rehab | Rinde al Máximo',
+    title: language === 'en' ? 'Motion Advanced Rehab | Perform at Your Peak' : 'Motion Advanced Rehab | Fisioterapia y Rehabilitación Deportiva en San Pedro Sula',
     description: language === 'en'
       ? 'Evidence-based physiotherapy, biomechanics, and performance training in Panama. Bridge the gap between rehab and high performance.'
-      : 'Fisioterapia basada en evidencia, biomecánica y entrenamiento de rendimiento en Panamá. Une la brecha entre rehabilitación y alto rendimiento.'
+      : 'Fisioterapia deportiva, rehabilitación de lesiones y biomecánica clínica en San Pedro Sula, Honduras. Recuperación acelerada con protocolos basados en evidencia.'
   });
 
   return (
@@ -107,6 +108,7 @@ function AppContent() {
 
   return (
     <div className="min-h-screen bg-motion-black text-motion-text selection:bg-motion-accent selection:text-white font-sans">
+      <StructuredData />
       <ScrollToTop />
       <Navbar onNavigate={handleNavigate} currentPage={location.pathname === '/' ? 'home' : location.pathname.substring(1)} language={language} setLanguage={setLanguage} />
       <main>
