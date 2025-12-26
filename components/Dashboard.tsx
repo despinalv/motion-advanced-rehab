@@ -206,27 +206,27 @@ export const Dashboard: React.FC<DashboardProps> = ({ language }) => {
   // Data for Video Library
   const videoContent = {
     'For You': {
-      featured: { title: "Hip Mobility Flow", duration: "12 min", level: "Beginner", img: `${import.meta.env.BASE_URL}images/video_mobility.jpg` },
+      featured: { title: "Hip Mobility Flow", duration: "12 min", level: "Beginner", img: `${import.meta.env.BASE_URL}images/video_mobility.webp` },
       list: [
-        { title: "Ankle Dorsiflexion", dur: "4 min", locked: false, img: `${import.meta.env.BASE_URL}images/service_running.jpg` },
-        { title: "T-Spine Rotation", dur: "8 min", locked: false, img: `${import.meta.env.BASE_URL}images/service_rehab.jpg` },
-        { title: "Single Leg RDL", dur: "10 min", locked: true, img: `${import.meta.env.BASE_URL}images/service_online.jpg` }
+        { title: "Ankle Dorsiflexion", dur: "4 min", locked: false, img: `${import.meta.env.BASE_URL}images/service_running.webp` },
+        { title: "T-Spine Rotation", dur: "8 min", locked: false, img: `${import.meta.env.BASE_URL}images/service_rehab.webp` },
+        { title: "Single Leg RDL", dur: "10 min", locked: true, img: `${import.meta.env.BASE_URL}images/service_online.webp` }
       ]
     },
     'Mobility': {
-      featured: { title: "Full Body Unlock", duration: "15 min", level: "All Levels", img: `${import.meta.env.BASE_URL}images/video_fullbody.jpg` },
+      featured: { title: "Full Body Unlock", duration: "15 min", level: "All Levels", img: `${import.meta.env.BASE_URL}images/video_fullbody.webp` },
       list: [
-        { title: "90/90 Hip Switch", dur: "5 min", locked: false, img: `${import.meta.env.BASE_URL}images/hero_bg.jpg` },
-        { title: "Cat-Cow Flow", dur: "3 min", locked: false, img: `${import.meta.env.BASE_URL}images/service_rehab.jpg` },
-        { title: "Deep Squat Hold", dur: "6 min", locked: true, img: `${import.meta.env.BASE_URL}images/service_running.jpg` }
+        { title: "90/90 Hip Switch", dur: "5 min", locked: false, img: `${import.meta.env.BASE_URL}images/hero_bg.webp` },
+        { title: "Cat-Cow Flow", dur: "3 min", locked: false, img: `${import.meta.env.BASE_URL}images/service_rehab.webp` },
+        { title: "Deep Squat Hold", dur: "6 min", locked: true, img: `${import.meta.env.BASE_URL}images/service_running.webp` }
       ]
     },
     'Strength': {
-      featured: { title: "Core Foundations", duration: "20 min", level: "Intermediate", img: `${import.meta.env.BASE_URL}images/video_strength.jpg` },
+      featured: { title: "Core Foundations", duration: "20 min", level: "Intermediate", img: `${import.meta.env.BASE_URL}images/video_strength.webp` },
       list: [
-        { title: "Goblet Squat", dur: "8 min", locked: false, img: `${import.meta.env.BASE_URL}images/service_online.jpg` },
-        { title: "Pallof Press", dur: "4 min", locked: false, img: `${import.meta.env.BASE_URL}images/blog_1.jpg` },
-        { title: "Romanian Deadlift", dur: "12 min", locked: true, img: `${import.meta.env.BASE_URL}images/blog_2.jpg` }
+        { title: "Goblet Squat", dur: "8 min", locked: false, img: `${import.meta.env.BASE_URL}images/service_online.webp` },
+        { title: "Pallof Press", dur: "4 min", locked: false, img: `${import.meta.env.BASE_URL}images/blog_1.webp` },
+        { title: "Romanian Deadlift", dur: "12 min", locked: true, img: `${import.meta.env.BASE_URL}images/blog_2.webp` }
       ]
     }
   };

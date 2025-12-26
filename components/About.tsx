@@ -22,21 +22,21 @@ export const About: React.FC<AboutProps> = ({ language }) => {
                     name: "Sofía López",
                     role: "Physiotherapist",
                     specialty: "Master in Sports Rehabilitation",
-                    image: `${import.meta.env.BASE_URL}images/team_sofia.jpg`,
+                    image: `${import.meta.env.BASE_URL}images/team_sofia.webp`,
                     bio: "Specializing in the transition from injury to peak athletic performance."
                 },
                 {
                     name: "Maria J. Palma",
                     role: "Physiotherapist",
                     specialty: "Master in Neurological Physiotherapy",
-                    image: `${import.meta.env.BASE_URL}images/team_maria.jpg`,
+                    image: `${import.meta.env.BASE_URL}images/team_maria.webp`,
                     bio: "Expert in neuroplasticity and movement disorders recovery."
                 },
                 {
                     name: "Karen Lagos",
                     role: "Nutritionist",
                     specialty: "Clinical & Sports Nutrition",
-                    image: `${import.meta.env.BASE_URL}images/team_karen.jpg`,
+                    image: `${import.meta.env.BASE_URL}images/team_karen.webp`,
                     bio: "Fueling recovery and optimizing metabolic health for longevity."
                 }
             ]
@@ -55,21 +55,21 @@ export const About: React.FC<AboutProps> = ({ language }) => {
                     name: "Sofía López",
                     role: "Fisioterapeuta",
                     specialty: "Máster en Readaptación Deportiva",
-                    image: `${import.meta.env.BASE_URL}images/team_sofia.jpg`,
+                    image: `${import.meta.env.BASE_URL}images/team_sofia.webp`,
                     bio: "Especialista en la transición desde la lesión hasta el máximo rendimiento deportivo."
                 },
                 {
                     name: "Maria J. Palma",
                     role: "Fisioterapeuta",
                     specialty: "Máster en Fisioterapia Neurológica",
-                    image: `${import.meta.env.BASE_URL}images/team_maria.jpg`,
+                    image: `${import.meta.env.BASE_URL}images/team_maria.webp`,
                     bio: "Experta en neuroplasticidad y recuperación de trastornos del movimiento."
                 },
                 {
                     name: "Karen Lagos",
                     role: "Nutricionista",
                     specialty: "Nutrición Clínica y Deportiva",
-                    image: `${import.meta.env.BASE_URL}images/team_karen.jpg`,
+                    image: `${import.meta.env.BASE_URL}images/team_karen.webp`,
                     bio: "Alimentando la recuperación y optimizando la salud metabólica para la longevidad."
                 }
             ]

@@ -20,21 +20,21 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate, language }) => {
           title: "Athlete Rehab",
           price: "Hybrid",
           description: "Injury readaptation designed for high performance.",
-          image: `${import.meta.env.BASE_URL}images/service_rehab.jpg`
+          image: `${import.meta.env.BASE_URL}images/service_rehab.webp`
         },
         {
           id: 'running',
           title: "Return to Run",
           price: "Program",
           description: "Technique analysis and unilateral strength for pain-free miles.",
-          image: `${import.meta.env.BASE_URL}images/service_running.jpg`
+          image: `${import.meta.env.BASE_URL}images/service_running.webp`
         },
         {
           id: 'online',
           title: "Online Coaching",
           price: "VIRTUAL",
           description: "Full functional assessment and programming from anywhere.",
-          image: `${import.meta.env.BASE_URL}images/service_online.jpg`
+          image: `${import.meta.env.BASE_URL}images/service_online.webp`
         }
       ]
     },
@@ -48,21 +48,21 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate, language }) => {
           title: "Rehabilitación de Atletas",
           price: "Híbrido",
           description: "Readaptación de lesiones diseñada para alto rendimiento.",
-          image: `${import.meta.env.BASE_URL}images/service_rehab.jpg`
+          image: `${import.meta.env.BASE_URL}images/service_rehab.webp`
         },
         {
           id: 'running',
           title: "Return to Run",
           price: "Programa",
           description: "Análisis técnico y fuerza unilateral para kilómetros sin dolor.",
-          image: `${import.meta.env.BASE_URL}images/service_running.jpg`
+          image: `${import.meta.env.BASE_URL}images/service_running.webp`
         },
         {
           id: 'online',
           title: "Online Coaching",
           price: "VIRTUAL",
           description: "Evaluación funcional completa y programación desde cualquier lugar.",
-          image: `${import.meta.env.BASE_URL}images/service_online.jpg`
+          image: `${import.meta.env.BASE_URL}images/service_online.webp`
         }
       ]
     }
