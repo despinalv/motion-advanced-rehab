@@ -77,7 +77,7 @@ export const Dashboard: React.FC<DashboardProps> = ({ language }) => {
         <div className="flex justify-between items-end">
           <h3 className="text-2xl font-bold text-white">{t.phone.week} 4</h3>
           <div className="w-8 h-8 rounded-full bg-white/10 overflow-hidden">
-            <img src={`${import.meta.env.BASE_URL}images/avatar_placeholder.jpg`} alt="Profile" className="w-full h-full object-cover" />
+            <img src={`${import.meta.env.BASE_URL}images/avatar_placeholder.webp`} alt="Profile" className="w-full h-full object-cover" />
           </div>
         </div>
       </div>

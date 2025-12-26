@@ -33,7 +33,7 @@ export const Hero: React.FC<HeroProps> = ({ onNavigate, language }) => {
       {/* Background Content */}
       <div className="absolute inset-0 z-0">
         <img
-          src={`${import.meta.env.BASE_URL}images/hero_bg.jpg`}
+          src={`${import.meta.env.BASE_URL}images/hero_bg.webp`}
           alt="Athlete focused"
           className="w-full h-full object-cover opacity-50 animate-scale-in hero-mask"
         />

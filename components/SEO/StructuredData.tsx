@@ -5,7 +5,7 @@ export const StructuredData = () => {
         "@context": "https://schema.org",
         "@type": "LocalBusiness",
         "name": "Motion Advanced Rehab",
-        "image": "https://despinalv.github.io/motion-advanced-rehab/images/hero_bg.jpg",
+        "image": "https://despinalv.github.io/motion-advanced-rehab/images/hero_bg.webp",
         "telephone": "+504 9334-3693",
         "email": "info@motionarehab.com",
         "address": {

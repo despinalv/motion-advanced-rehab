@@ -48,7 +48,7 @@ export const ServiceDetail: React.FC<ServiceDetailProps> = ({ serviceId, onNavig
       title: "Athlete Rehab",
       subtitle: "Bridge the gap between rehab and performance.",
       description: "Traditional physical therapy stops when you are 'pain-free'. We stop when you are performing at your peak. Our hybrid approach combines clinical manual therapy with strength and conditioning principles to ensure you don't just recover—you evolve.",
-      image: `${import.meta.env.BASE_URL}images/service_rehab.jpg`,
+      image: `${import.meta.env.BASE_URL}images/service_rehab.webp`,
       benefits: [
         "In-depth biomechanical assessment",
         "Hands-on manual therapy for tissue quality",
@@ -68,7 +68,7 @@ export const ServiceDetail: React.FC<ServiceDetailProps> = ({ serviceId, onNavig
       title: "Return to Run",
       subtitle: "Run further, faster, and pain-free.",
       description: "Whether you're dealing with runner's knee, shin splints, or achilles tendinopathy, our running protocol is designed to rebuild your gait. We use video analysis to optimize your mechanics and prescribe unilateral strength work to fix imbalances.",
-      image: `${import.meta.env.BASE_URL}images/service_running.jpg`,
+      image: `${import.meta.env.BASE_URL}images/service_running.webp`,
       benefits: [
         "Frame-by-frame video gait analysis",
         "Cadence and stride length optimization",
@@ -88,7 +88,7 @@ export const ServiceDetail: React.FC<ServiceDetailProps> = ({ serviceId, onNavig
       title: "Online Coaching",
       subtitle: "Elite programming, wherever you are.",
       description: "Access the same methodology used by our in-house athletes from anywhere in the world. This isn't a PDF template. It's a living program that adapts to your daily biofeedback, ensuring you are training at the optimal intensity for your current state.",
-      image: `${import.meta.env.BASE_URL}images/service_online.jpg`,
+      image: `${import.meta.env.BASE_URL}images/service_online.webp`,
       benefits: [
         "Custom training blocks delivered via Motion App",
         "Async video form checks for main lifts",
@@ -111,7 +111,7 @@ export const ServiceDetail: React.FC<ServiceDetailProps> = ({ serviceId, onNavig
       title: "Rehabilitación de Atletas",
       subtitle: "Une la brecha entre rehabilitación y rendimiento.",
       description: "La fisioterapia tradicional se detiene cuando 'no tienes dolor'. Nosotros paramos cuando estás rindiendo al máximo. Nuestro enfoque híbrido combina terapia manual clínica con principios de fuerza y acondicionamiento.",
-      image: `${import.meta.env.BASE_URL}images/service_rehab.jpg`,
+      image: `${import.meta.env.BASE_URL}images/service_rehab.webp`,
       benefits: [
         "Evaluación biomecánica profunda",
         "Terapia manual para calidad del tejido",
@@ -131,7 +131,7 @@ export const ServiceDetail: React.FC<ServiceDetailProps> = ({ serviceId, onNavig
       title: "Return to Run",
       subtitle: "Corre más lejos, más rápido y sin dolor.",
       description: "Ya sea rodilla de corredor o tendinopatía de aquiles, nuestro protocolo está diseñado para reconstruir tu marcha. Usamos análisis de video para optimizar tu mecánica.",
-      image: `${import.meta.env.BASE_URL}images/service_running.jpg`,
+      image: `${import.meta.env.BASE_URL}images/service_running.webp`,
       benefits: [
         "Análisis de marcha cuadro por cuadro",
         "Optimización de cadencia y zancada",
@@ -151,7 +151,7 @@ export const ServiceDetail: React.FC<ServiceDetailProps> = ({ serviceId, onNavig
       title: "Coaching Online",
       subtitle: "Programación de élite, donde sea que estés.",
       description: "Accede a la misma metodología usada por nuestros atletas internos. No es una plantilla PDF. Es un programa vivo que se adapta a tu biofeedback diario.",
-      image: `${import.meta.env.BASE_URL}images/service_online.jpg`,
+      image: `${import.meta.env.BASE_URL}images/service_online.webp`,
       benefits: [
         "Bloques de entrenamiento vía Motion App",
         "Chequeos de video asíncronos",
