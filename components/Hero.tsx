@@ -52,15 +52,15 @@ export const Hero: React.FC<HeroProps> = ({ onNavigate, language }) => {
           </h1>
         </div>
 
-        <p className="opacity-0 animate-[fadeInUp_1s_ease-out_forwards_0.5s] text-lg md:text-xl text-gray-300 mb-10 max-w-lg font-normal leading-relaxed tracking-tight">
+        <p className="opacity-0 animate-[fadeInUp_1s_ease-out_forwards_0.5s] text-lg md:text-xl text-white mb-10 max-w-lg font-normal leading-relaxed tracking-tight">
           {language === 'en' ? (
             <>
-              Clinical biomechanics meets high-performance training.
+              Physiotherapy meets high-performance training.
               <span className="text-white/80 block mt-1">Evidence-based protocols. Lasting results.</span>
             </>
           ) : (
             <>
-              Biomecánica clínica y entrenamiento de alto rendimiento.
+              Fisioterapia y entrenamiento de alto rendimiento.
               <span className="text-white/80 block mt-1">Protocolos basados en evidencia. Resultados duraderos.</span>
             </>
           )}
