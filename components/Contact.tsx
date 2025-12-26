@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Button } from './ui/Button';
-import { Mail, MapPin, ArrowRight, ArrowLeft } from 'lucide-react';
+import { Mail, MapPin, ArrowRight, ArrowLeft, Loader2, CheckCircle } from 'lucide-react';
 
 interface ContactProps {
     onNavigate: (target: string) => void;
@@ -11,6 +11,9 @@ interface ContactProps {
 
 export const Contact: React.FC<ContactProps> = ({ onNavigate, initialPlan, onBack, language }) => {
     const [goal, setGoal] = useState('Athlete Rehab');
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [isSuccess, setIsSuccess] = useState(false);
+    const [errorMessage, setErrorMessage] = useState('');
 
     useEffect(() => {
         if (initialPlan) {
@@ -41,6 +44,10 @@ export const Contact: React.FC<ContactProps> = ({ onNavigate, initialPlan, onBac
             goal: 'Goal',
             msg: 'Message',
             submit: 'Submit Application',
+            sending: 'Sending...',
+            successTitle: 'Application Received',
+            successMsg: 'We have received your details. Our team will review your application and contact you shortly to schedule your assessment.',
+            errorMsg: 'Something went wrong. Please try again or email us directly.',
             placeholderMsg: 'Tell us about your injury or goals...',
             options: ['Athlete Rehab', 'Return to Run', 'Online Coaching', 'Performance Training', 'Other']
         },
@@ -66,12 +73,51 @@ export const Contact: React.FC<ContactProps> = ({ onNavigate, initialPlan, onBac
             goal: 'Objetivo',
             msg: 'Mensaje',
             submit: 'Enviar Aplicación',
+            sending: 'Enviando...',
+            successTitle: 'Aplicación Recibida',
+            successMsg: 'Hemos recibido tus detalles. Nuestro equipo revisará tu aplicación y te contactará en breve para agendar tu evaluación.',
+            errorMsg: 'Algo salió mal. Por favor intenta de nuevo o envíanos un email directo.',
             placeholderMsg: 'Cuéntanos sobre tu lesión u objetivos...',
             options: ['Rehabilitación de Atletas', 'Retorno a Correr', 'Coaching Online', 'Entrenamiento Rendimiento', 'Otro']
         }
     };
 
     const t = translations[language];
+
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        setIsSubmitting(true);
+        setErrorMessage('');
+
+        const form = e.currentTarget;
+        const formData = new FormData(form);
+
+        try {
+            const response = await fetch('https://formspree.io/f/meeqjlrk', {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+
+            if (response.ok) {
+                setIsSuccess(true);
+                form.reset();
+            } else {
+                const data = await response.json();
+                if (Object.hasOwn(data, 'errors')) {
+                    setErrorMessage(data["errors"].map((error: any) => error["message"]).join(", "));
+                } else {
+                    setErrorMessage(t.errorMsg);
+                }
+            }
+        } catch (error) {
+            setErrorMessage(t.errorMsg);
+        } finally {
+            setIsSubmitting(false);
+        }
+    };
 
     return (
         <div className="pt-32 pb-20 min-h-screen animate-[fadeInUp_0.5s_ease-out_forwards]">
@@ -211,44 +257,73 @@ export const Contact: React.FC<ContactProps> = ({ onNavigate, initialPlan, onBac
                     </div>
 
                     {/* Form Column (Appears First on Mobile due to flex-col-reverse) */}
-                    <form className="space-y-4 animate-[fadeInUp_0.5s_ease-out_0.3s_forwards] opacity-0" onSubmit={(e) => { e.preventDefault(); alert('Application Submitted'); }}>
-                        <div className="grid md:grid-cols-2 gap-4">
-                            <div className="space-y-2">
-                                <label className="text-xs font-bold text-motion-muted uppercase tracking-widest">{t.fname}</label>
-                                <input type="text" name="firstName" className="w-full bg-white/5 border border-white/10 rounded-lg p-3 text-white focus:outline-none focus:border-motion-accent transition-colors" placeholder="Jane" required />
+                    <div className="animate-[fadeInUp_0.5s_ease-out_0.3s_forwards] opacity-0">
+                        {isSuccess ? (
+                            <div className="bg-motion-surface border border-motion-accent/20 rounded-2xl p-8 text-center flex flex-col items-center justify-center h-full min-h-[400px]">
+                                <div className="w-16 h-16 bg-motion-accent/20 rounded-full flex items-center justify-center mb-6 text-motion-accent">
+                                    <CheckCircle size={32} />
+                                </div>
+                                <h3 className="text-2xl text-white font-semibold mb-4">{t.successTitle}</h3>
+                                <p className="text-motion-muted mb-8 max-w-sm">{t.successMsg}</p>
+                                <Button onClick={() => setIsSuccess(false)} variant="secondary">
+                                    {language === 'en' ? 'Send Another Message' : 'Enviar Otro Mensaje'}
+                                </Button>
                             </div>
-                            <div className="space-y-2">
-                                <label className="text-xs font-bold text-motion-muted uppercase tracking-widest">{t.lname}</label>
-                                <input type="text" name="lastName" className="w-full bg-white/5 border border-white/10 rounded-lg p-3 text-white focus:outline-none focus:border-motion-accent transition-colors" placeholder="Doe" required />
-                            </div>
-                        </div>
+                        ) : (
+                            <form className="space-y-4" onSubmit={handleSubmit}>
+                                <div className="grid md:grid-cols-2 gap-4">
+                                    <div className="space-y-2">
+                                        <label className="text-xs font-bold text-motion-muted uppercase tracking-widest">{t.fname}</label>
+                                        <input type="text" name="firstName" className="w-full bg-white/5 border border-white/10 rounded-lg p-3 text-white focus:outline-none focus:border-motion-accent transition-colors" placeholder="Jane" required disabled={isSubmitting} />
+                                    </div>
+                                    <div className="space-y-2">
+                                        <label className="text-xs font-bold text-motion-muted uppercase tracking-widest">{t.lname}</label>
+                                        <input type="text" name="lastName" className="w-full bg-white/5 border border-white/10 rounded-lg p-3 text-white focus:outline-none focus:border-motion-accent transition-colors" placeholder="Doe" required disabled={isSubmitting} />
+                                    </div>
+                                </div>
 
-                        <div className="space-y-2">
-                            <label className="text-xs font-bold text-motion-muted uppercase tracking-widest">{t.email}</label>
-                            <input type="email" name="email" className="w-full bg-white/5 border border-white/10 rounded-lg p-3 text-white focus:outline-none focus:border-motion-accent transition-colors" placeholder="jane@example.com" required />
-                        </div>
+                                <div className="space-y-2">
+                                    <label className="text-xs font-bold text-motion-muted uppercase tracking-widest">{t.email}</label>
+                                    <input type="email" name="email" className="w-full bg-white/5 border border-white/10 rounded-lg p-3 text-white focus:outline-none focus:border-motion-accent transition-colors" placeholder="jane@example.com" required disabled={isSubmitting} />
+                                </div>
 
-                        <div className="space-y-2">
-                            <label className="text-xs font-bold text-motion-muted uppercase tracking-widest">{t.goal}</label>
-                            <select
-                                name="goal"
-                                value={goal}
-                                onChange={(e) => setGoal(e.target.value)}
-                                className="w-full bg-white/5 border border-white/10 rounded-lg p-3 text-white focus:outline-none focus:border-motion-accent transition-colors appearance-none cursor-pointer"
-                            >
-                                {t.options.map(opt => <option key={opt} className="bg-motion-surface" value={opt}>{opt}</option>)}
-                            </select>
-                        </div>
+                                <div className="space-y-2">
+                                    <label className="text-xs font-bold text-motion-muted uppercase tracking-widest">{t.goal}</label>
+                                    <select
+                                        name="goal"
+                                        value={goal}
+                                        onChange={(e) => setGoal(e.target.value)}
+                                        className="w-full bg-white/5 border border-white/10 rounded-lg p-3 text-white focus:outline-none focus:border-motion-accent transition-colors appearance-none cursor-pointer"
+                                        disabled={isSubmitting}
+                                    >
+                                        {t.options.map(opt => <option key={opt} className="bg-motion-surface" value={opt}>{opt}</option>)}
+                                    </select>
+                                </div>
 
-                        <div className="space-y-2">
-                            <label className="text-xs font-bold text-motion-muted uppercase tracking-widest">{t.msg}</label>
-                            <textarea name="message" rows={5} className="w-full bg-white/5 border border-white/10 rounded-lg p-3 text-white focus:outline-none focus:border-motion-accent transition-colors" placeholder={t.placeholderMsg} required></textarea>
-                        </div>
+                                <div className="space-y-2">
+                                    <label className="text-xs font-bold text-motion-muted uppercase tracking-widest">{t.msg}</label>
+                                    <textarea name="message" rows={5} className="w-full bg-white/5 border border-white/10 rounded-lg p-3 text-white focus:outline-none focus:border-motion-accent transition-colors" placeholder={t.placeholderMsg} required disabled={isSubmitting}></textarea>
+                                </div>
 
-                        <Button type="submit" variant="primary" fullWidth className="mt-4 group">
-                            {t.submit} <ArrowRight size={16} className="inline ml-2 group-hover:translate-x-1 transition-transform" />
-                        </Button>
-                    </form>
+                                {errorMessage && (
+                                    <p className="text-red-400 text-sm bg-red-400/10 p-3 rounded-lg border border-red-400/20">{errorMessage}</p>
+                                )}
+
+                                <Button type="submit" variant="primary" fullWidth className="mt-4 group" disabled={isSubmitting}>
+                                    {isSubmitting ? (
+                                        <span className="flex items-center justify-center">
+                                            <Loader2 size={16} className="animate-spin mr-2" />
+                                            {t.sending}
+                                        </span>
+                                    ) : (
+                                        <span className="flex items-center justify-center">
+                                            {t.submit} <ArrowRight size={16} className="ml-2 group-hover:translate-x-1 transition-transform" />
+                                        </span>
+                                    )}
+                                </Button>
+                            </form>
+                        )}
+                    </div>
                 </div>
             </div>
         </div>
