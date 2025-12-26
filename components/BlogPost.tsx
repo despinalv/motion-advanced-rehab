@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
-import { ArrowLeft, Calendar, User, Clock, Share2, ArrowRight, Loader2 } from 'lucide-react';
+import { ArrowLeft, Calendar, User, Clock, Share2, ArrowRight } from 'lucide-react';
+import { blogPosts } from '../src/data/blogPosts';
 import { Button } from './ui/Button';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useSEO } from '../hooks/useSEO';
-import { useBlogPost } from '../hooks/useBlogPosts';
 
 interface BlogPostProps {
     onNavigate?: (target: string, data?: string) => void;
@@ -15,8 +15,6 @@ export const BlogPost: React.FC<BlogPostProps> = ({ onBack, language }) => {
     const { id } = useParams<{ id: string }>(); // This 'id' is actually the slug
     const navigate = useNavigate();
 
-    const { post, loading, error } = useBlogPost(id, language);
-
     const translations = {
         en: {
             back: 'Back to Journal',
@@ -25,8 +23,7 @@ export const BlogPost: React.FC<BlogPostProps> = ({ onBack, language }) => {
             next: 'Next',
             ready: 'Ready to move better?',
             join: 'Join our programs and apply these principles to your own training today.',
-            book: 'Book an Assessment',
-            notFound: 'Article not found.'
+            book: 'Book an Assessment'
         },
         es: {
             back: 'Volver al Blog',
@@ -35,17 +32,33 @@ export const BlogPost: React.FC<BlogPostProps> = ({ onBack, language }) => {
             next: 'Siguiente',
             ready: '¿Listo para moverte mejor?',
             join: 'Únete a nuestros programas y aplica estos principios a tu entrenamiento hoy.',
-            book: 'Reservar Evaluación',
-            notFound: 'Artículo no encontrado.'
+            book: 'Reservar Evaluación'
         }
     };
 
     const t = translations[language];
 
+    // Data
+    // Determine which language content to use based on prop
+    const posts = language === 'en' ? blogPosts.en : blogPosts.es;
+
+    // FIND POST BY SLUG (since 'id' from params is the slug)
+    // We search the values to find the matching slug
+    const post = Object.values(posts).find((p: any) => p.slug === id) || Object.values(posts)[0];
+
     useSEO({
         title: post ? `${post.title} | Motion Blog` : 'Motion Blog',
         description: post ? post.excerpt : 'Article details'
     });
+
+    if (!post) return <div>Post not found</div>;
+
+    // Calculate Previous and Next Posts
+    const allPosts = Object.values(posts);
+    const currentIndex = allPosts.findIndex((p: any) => p.slug === id);
+
+    const prevPost = currentIndex > 0 ? allPosts[currentIndex - 1] : null;
+    const nextPost = currentIndex < allPosts.length - 1 ? allPosts[currentIndex + 1] : null;
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -54,23 +67,6 @@ export const BlogPost: React.FC<BlogPostProps> = ({ onBack, language }) => {
     const handleBack = () => {
         if (onBack) onBack();
         else navigate('/blog');
-    }
-
-    if (loading) {
-        return (
-            <div className="min-h-screen pt-32 flex justify-center text-white">
-                <Loader2 className="animate-spin w-10 h-10" />
-            </div>
-        );
-    }
-
-    if (!post) {
-        return (
-            <div className="min-h-screen pt-32 text-center text-white">
-                <h2 className="text-2xl">{t.notFound}</h2>
-                <Button onClick={handleBack} className="mt-4">{t.back}</Button>
-            </div>
-        );
     }
 
     return (
@@ -116,7 +112,7 @@ export const BlogPost: React.FC<BlogPostProps> = ({ onBack, language }) => {
                         </div>
                         <div className="flex items-center gap-2">
                             <Calendar size={14} />
-                            <span>{new Date(post.date).toLocaleDateString()}</span>
+                            <span>{post.date}</span>
                         </div>
                     </div>
                 </div>
@@ -129,6 +125,44 @@ export const BlogPost: React.FC<BlogPostProps> = ({ onBack, language }) => {
                 {/* Content */}
                 <div className="prose prose-invert prose-lg max-w-none text-gray-300 leading-relaxed">
                     {post.content}
+                </div>
+
+                {/* Post Navigation */}
+                <div className="mt-20 pt-12 border-t border-white/10 grid md:grid-cols-2 gap-8">
+                    <div className="text-left">
+                        {prevPost ? (
+                            <button
+                                onClick={() => navigate(`/blog/${(prevPost as any).slug}`)}
+                                className="group w-full text-left bg-transparent border-none p-0 cursor-pointer"
+                            >
+                                <span className="flex items-center text-xs text-motion-muted uppercase tracking-widest mb-2 group-hover:text-motion-accent transition-colors">
+                                    <ArrowLeft size={14} className="mr-2 group-hover:-translate-x-1 transition-transform" /> {t.prev}
+                                </span>
+                                <h4 className="text-white font-medium text-lg leading-tight group-hover:text-gray-300 transition-colors line-clamp-2">
+                                    {(prevPost as any).title}
+                                </h4>
+                            </button>
+                        ) : (
+                            <div className="opacity-0 pointer-events-none">Placeholder</div>
+                        )}
+                    </div>
+                    <div className="text-right">
+                        {nextPost ? (
+                            <button
+                                onClick={() => navigate(`/blog/${(nextPost as any).slug}`)}
+                                className="group w-full text-right flex flex-col items-end bg-transparent border-none p-0 cursor-pointer"
+                            >
+                                <span className="flex items-center text-xs text-motion-muted uppercase tracking-widest mb-2 group-hover:text-motion-accent transition-colors">
+                                    {t.next} <ArrowRight size={14} className="ml-2 group-hover:translate-x-1 transition-transform" />
+                                </span>
+                                <h4 className="text-white font-medium text-lg leading-tight group-hover:text-gray-300 transition-colors line-clamp-2">
+                                    {(nextPost as any).title}
+                                </h4>
+                            </button>
+                        ) : (
+                            <div className="opacity-0 pointer-events-none">Placeholder</div>
+                        )}
+                    </div>
                 </div>
 
                 {/* CTA */}
