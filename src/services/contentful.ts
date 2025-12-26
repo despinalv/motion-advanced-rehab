@@ -58,7 +58,7 @@ export const getBlogPosts = async (locale: 'en' | 'es' = 'en'): Promise<BlogPost
 
             return {
                 id: item.sys.id,
-                slug: fields.slug as string,
+                slug: (fields.slug as string) || item.sys.id, // Fallback to ID if slug is missing
                 title: fields.title as string,
                 date: fields.date as string, // Transform date format if necessary
                 category: fields.category as string,
