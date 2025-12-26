@@ -121,7 +121,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, language, setLanguag
                   </a>
                 </li>
                 <li>
-                  <a href="https://www.instagram.com/motionarehab/" target="_blank" rel="noopener noreferrer" className="hover:text-motion-accent transition-colors">
+                  <a href="https://www.tiktok.com/@motionarehab" target="_blank" rel="noopener noreferrer" className="hover:text-motion-accent transition-colors">
                     TikTok
                   </a>
                 </li>

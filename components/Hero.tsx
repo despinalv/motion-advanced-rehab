@@ -47,7 +47,7 @@ export const Hero: React.FC<HeroProps> = ({ onNavigate, language }) => {
           <h1 className="text-6xl md:text-8xl lg:text-9xl font-semibold text-white tracking-tighter leading-none -mb-2 md:-mb-4">
             {t.line1}
           </h1>
-          <h1 className="text-6xl md:text-8xl lg:text-9xl font-semibold text-motion-muted tracking-tighter leading-none mb-8">
+          <h1 className="text-6xl md:text-8xl lg:text-9xl font-semibold text-white tracking-tighter leading-none mb-8">
             {t.line2}<span className="text-motion-accent">.</span>
           </h1>
         </div>
