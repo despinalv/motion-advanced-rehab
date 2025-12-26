@@ -56,7 +56,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, language, setLanguag
           <div className="max-w-xs relative">
             {/* Logo */}
             <a href="#" onClick={(e) => handleScrollLink(e, 'home')} className="block mb-6">
-              <img src={`${import.meta.env.BASE_URL}images/logo_white.png`} alt="Motion" className="h-8 w-auto opacity-80 hover:opacity-100 transition-opacity" />
+              <img src={`${import.meta.env.BASE_URL}images/logo_white.png`} alt="Motion" className="w-64 h-auto opacity-80 hover:opacity-100 transition-opacity" />
             </a>
             <p className="text-motion-muted text-sm leading-relaxed">
               {t.tagline}
