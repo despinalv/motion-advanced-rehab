@@ -12,6 +12,7 @@ interface BlogLibraryProps {
 
 export const BlogLibrary: React.FC<BlogLibraryProps> = ({ onNavigate, onBack, language }) => {
   const [activeCategory, setActiveCategory] = useState(language === 'en' ? 'All' : 'Todos');
+  const [searchQuery, setSearchQuery] = useState('');
 
   useSEO({
     title: language === 'en' ? 'Motion Blog | Insights & Research' : 'Motion Blog | Insights e Investigación',
@@ -28,7 +29,7 @@ export const BlogLibrary: React.FC<BlogLibraryProps> = ({ onNavigate, onBack, la
       desc: 'Deep dives into biomechanics, rehab science, and high-performance training. No fluff, just evidence-based protocols.',
       search: 'Search articles...',
       read: 'Read Article',
-      noResults: 'No articles found in this category.',
+      noResults: 'No articles found matching your search.',
       categories: ['All', 'Rehab Science', 'Biomechanics', 'Performance', 'Nutrition', 'Education'],
       posts: Object.values(blogPosts.en)
     },
@@ -39,7 +40,7 @@ export const BlogLibrary: React.FC<BlogLibraryProps> = ({ onNavigate, onBack, la
       desc: 'Profundizamos en biomecánica, ciencia de rehabilitación y entrenamiento de alto rendimiento. Sin relleno, solo protocolos basados en evidencia.',
       search: 'Buscar artículos...',
       read: 'Leer Artículo',
-      noResults: 'No se encontraron artículos.',
+      noResults: 'No se encontraron artículos que coincidan con tu búsqueda.',
       categories: ['Todos', 'Ciencia de Rehabilitación', 'Biomecánica', 'Rendimiento', 'Nutrición', 'Educación'],
       posts: Object.values(blogPosts.es)
     }
@@ -53,9 +54,18 @@ export const BlogLibrary: React.FC<BlogLibraryProps> = ({ onNavigate, onBack, la
     setActiveCategory(activeAll);
   }
 
-  const filteredPosts = activeCategory === activeAll
-    ? t.posts
-    : t.posts.filter(post => post.category === activeCategory);
+  const filteredPosts = t.posts.filter(post => {
+    // 1. Filter by Category
+    const categoryMatch = activeCategory === activeAll || post.category === activeCategory;
+
+    // 2. Filter by Search Query
+    const query = searchQuery.toLowerCase();
+    const searchMatch = post.title.toLowerCase().includes(query) ||
+      (post.excerpt && post.excerpt.toLowerCase().includes(query)) ||
+      post.category.toLowerCase().includes(query);
+
+    return categoryMatch && searchMatch;
+  });
 
   return (
     <div className="pt-32 pb-20 min-h-screen animate-[fadeInUp_0.5s_ease-out_forwards]">
@@ -85,6 +95,8 @@ export const BlogLibrary: React.FC<BlogLibraryProps> = ({ onNavigate, onBack, la
             <input
               type="text"
               placeholder={t.search}
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
               className="bg-white/5 border border-white/10 rounded-full py-3 px-6 pr-12 text-white focus:outline-none focus:border-motion-accent transition-colors w-full md:w-64"
             />
             <Search size={18} className="absolute right-4 top-1/2 -translate-y-1/2 text-motion-muted" />

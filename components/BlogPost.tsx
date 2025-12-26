@@ -106,7 +106,7 @@ export const BlogPost: React.FC<BlogPostProps> = ({ onBack, language }) => {
                     <div className="flex items-center gap-4 text-sm text-motion-muted border-t border-white/10 pt-6 mt-8">
                         <div className="flex items-center gap-2">
                             <div className="w-8 h-8 rounded-full bg-white/10 overflow-hidden">
-                                <img src={`${import.meta.env.BASE_URL}images/avatar_placeholder.jpg`} alt="Author" className="w-full h-full object-cover" />
+                                <img src={`${import.meta.env.BASE_URL}images/avatar_placeholder.webp`} alt="Author" className="w-full h-full object-cover" />
                             </div>
                             <span className="text-white font-medium">{post.author}</span>
                         </div>
