@@ -105,7 +105,7 @@ export const BlogSection: React.FC<BlogSectionProps> = ({ onNavigate, language }
             {/* Desktop Grid */}
             <div className="hidden md:grid md:grid-cols-3 gap-8">
               {displayPosts.map((post, index) => (
-                <div key={post.id} className="reveal-on-scroll" style={{ transitionDelay: `${index * 100}ms` }}>
+                <div key={post.id} className="animate-[fadeInUp_0.8s_ease-out_forwards]" style={{ animationDelay: `${index * 100}ms` }}>
                   {renderPost(post)}
                 </div>
               ))}
@@ -115,7 +115,7 @@ export const BlogSection: React.FC<BlogSectionProps> = ({ onNavigate, language }
             <Carousel
               items={displayPosts}
               renderItem={renderPost}
-              className="reveal-on-scroll"
+              className="animate-[fadeInUp_0.8s_ease-out_forwards]"
             />
           </>
         )}

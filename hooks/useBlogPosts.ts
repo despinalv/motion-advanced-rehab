@@ -14,22 +14,18 @@ export const useBlogPosts = (language: 'en' | 'es') => {
                 // Try fetching from Contentful
                 const fetchedPosts = await getBlogPosts(language);
 
-                if (fetchedPosts.length > 0) {
-                    setPosts(fetchedPosts);
-                } else {
-                    // Fallback to local data if no posts found (or API error handled inside service returns empty)
-                    // Transforming local data to match interface
-                    const localPosts = Object.values(language === 'en' ? fallbackData.en : fallbackData.es).map((p: any) => ({
-                        ...p,
-                        id: p.id || p.slug, // ensure ID
-                        readTime: p.readTime || '5 min read'
-                    }));
-                    setPosts(localPosts);
+                // If fetch succeeds, use the result (even if empty) to strict truth
+                setPosts(fetchedPosts);
+
+                // Debugging for user
+                if (fetchedPosts.length === 0) {
+                    console.log('Contentful returned 0 posts. Ensure posts are Published and locale matches.');
                 }
+
             } catch (err) {
                 console.error(err);
                 setError(err as Error);
-                // Fallback on error
+                // Fallback on error (network/auth issues)
                 const localPosts = Object.values(language === 'en' ? fallbackData.en : fallbackData.es).map((p: any) => ({
                     ...p,
                     id: p.id || p.slug,
