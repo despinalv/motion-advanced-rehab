@@ -40,8 +40,8 @@ export const useSEO = ({ title, description }: SEOProps) => {
             canonical.setAttribute('rel', 'canonical');
             document.head.appendChild(canonical);
         }
-        // Use window.location.href but strip query params
-        canonical.setAttribute('href', window.location.protocol + "//" + window.location.host + window.location.pathname);
+        // Use production domain for canonical to avoid duplicate content issues
+        canonical.setAttribute('href', "https://motionarehab.com" + window.location.pathname);
 
         // Update HTML Lang Attribute
         // Detect language from title keywords or passed prop if we updated the hook signature
