@@ -32,6 +32,7 @@ export const useSEO = ({ title, description }: SEOProps) => {
 
         setMetaTag('og:title', title);
         setMetaTag('og:description', description);
+        setMetaTag('og:url', `https://motionarehab.com${window.location.pathname}`);
 
         // Canonical Link
         let canonical = document.querySelector('link[rel="canonical"]');
