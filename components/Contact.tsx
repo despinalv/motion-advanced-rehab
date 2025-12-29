@@ -93,7 +93,7 @@ export const Contact: React.FC<ContactProps> = ({ onNavigate, initialPlan, onBac
         const formData = new FormData(form);
 
         try {
-            const response = await fetch('https://formspree.io/f/meeqjlrk', {
+            const response = await fetch('https://formspree.io/f/mkonklqp', {
                 method: 'POST',
                 body: formData,
                 headers: {
