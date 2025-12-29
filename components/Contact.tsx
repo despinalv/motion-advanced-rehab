@@ -14,6 +14,8 @@ export const Contact: React.FC<ContactProps> = ({ onNavigate, initialPlan, onBac
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [isSuccess, setIsSuccess] = useState(false);
     const [errorMessage, setErrorMessage] = useState('');
+    const [emailRequired, setEmailRequired] = useState(true);
+    const [phoneRequired, setPhoneRequired] = useState(true);
 
     useEffect(() => {
         if (initialPlan) {
@@ -49,7 +51,9 @@ export const Contact: React.FC<ContactProps> = ({ onNavigate, initialPlan, onBac
             successMsg: 'We have received your details. Our team will review your application and contact you shortly to schedule your assessment.',
             errorMsg: 'Something went wrong. Please try again or email us directly.',
             placeholderMsg: 'Tell us about your injury or goals...',
-            options: ['Athlete Rehab', 'Return to Run', 'Online Coaching', 'Performance Training', 'Other']
+            options: ['Athlete Rehab', 'Return to Run', 'Online Coaching', 'Performance Training', 'Other'],
+            phone: 'Phone Number',
+            or: 'or'
         },
         es: {
             back: 'Volver',
@@ -78,7 +82,9 @@ export const Contact: React.FC<ContactProps> = ({ onNavigate, initialPlan, onBac
             successMsg: 'Hemos recibido tus detalles. Nuestro equipo revisará tu aplicación y te contactará en breve para agendar tu evaluación.',
             errorMsg: 'Algo salió mal. Por favor intenta de nuevo o envíanos un email directo.',
             placeholderMsg: 'Cuéntanos sobre tu lesión u objetivos...',
-            options: ['Rehabilitación de Atletas', 'Retorno a Correr', 'Coaching Online', 'Entrenamiento Rendimiento', 'Otro']
+            options: ['Rehabilitación de Atletas', 'Retorno a Correr', 'Coaching Online', 'Entrenamiento Rendimiento', 'Otro'],
+            phone: 'Número de Teléfono',
+            or: 'o'
         }
     };
 
@@ -282,9 +288,61 @@ export const Contact: React.FC<ContactProps> = ({ onNavigate, initialPlan, onBac
                                     </div>
                                 </div>
 
-                                <div className="space-y-2">
-                                    <label className="text-xs font-bold text-motion-muted uppercase tracking-widest">{t.email}</label>
-                                    <input type="email" name="email" className="w-full bg-white/5 border border-white/10 rounded-lg p-3 text-white focus:outline-none focus:border-motion-accent transition-colors" placeholder="jane@example.com" required disabled={isSubmitting} />
+                                <div className="space-y-4">
+                                    <div className="space-y-2">
+                                        <label className="text-xs font-bold text-motion-muted uppercase tracking-widest">
+                                            {t.email} <span className="text-[10px] font-normal lowercase opacity-75">({t.or} {t.phone})</span>
+                                        </label>
+                                        <input
+                                            type="email"
+                                            name="email"
+                                            className="w-full bg-white/5 border border-white/10 rounded-lg p-3 text-white focus:outline-none focus:border-motion-accent transition-colors"
+                                            placeholder="jane@example.com"
+                                            disabled={isSubmitting}
+                                            onChange={(e) => {
+                                                if (e.target.value.length > 0) {
+                                                    setPhoneRequired(false);
+                                                } else {
+                                                    setPhoneRequired(true);
+                                                }
+                                            }}
+                                            required={emailRequired}
+                                        />
+                                    </div>
+
+                                    <div className="space-y-2">
+                                        <label className="text-xs font-bold text-motion-muted uppercase tracking-widest">
+                                            {t.phone} <span className="text-[10px] font-normal lowercase opacity-75">({t.or} {t.email})</span>
+                                        </label>
+                                        <div className="flex gap-2">
+                                            <select
+                                                name="countryCode"
+                                                className="w-24 bg-white/5 border border-white/10 rounded-lg p-3 text-white focus:outline-none focus:border-motion-accent transition-colors appearance-none cursor-pointer text-center"
+                                                defaultValue="+504"
+                                                disabled={isSubmitting}
+                                            >
+                                                <option className="bg-motion-surface" value="+504">🇭🇳 +504</option>
+                                                <option className="bg-motion-surface" value="+1">🇺🇸 +1</option>
+                                                <option className="bg-motion-surface" value="+34">🇪🇸 +34</option>
+                                                <option className="bg-motion-surface" value="+52">🇲🇽 +52</option>
+                                            </select>
+                                            <input
+                                                type="tel"
+                                                name="phone"
+                                                className="flex-1 bg-white/5 border border-white/10 rounded-lg p-3 text-white focus:outline-none focus:border-motion-accent transition-colors"
+                                                placeholder="9999-9999"
+                                                disabled={isSubmitting}
+                                                onChange={(e) => {
+                                                    if (e.target.value.length > 0) {
+                                                        setEmailRequired(false);
+                                                    } else {
+                                                        setEmailRequired(true);
+                                                    }
+                                                }}
+                                                required={phoneRequired}
+                                            />
+                                        </div>
+                                    </div>
                                 </div>
 
                                 <div className="space-y-2">
