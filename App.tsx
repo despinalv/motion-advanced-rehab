@@ -16,6 +16,7 @@ import { BlogPost } from './components/BlogPost';
 import { About } from './components/About';
 import { useSEO } from './hooks/useSEO';
 import { StructuredData } from './components/SEO/StructuredData';
+import { GoogleAnalytics } from './components/GoogleAnalytics';
 
 // Scroll restoration component
 const ScrollToTop = () => {
@@ -108,6 +109,7 @@ function AppContent() {
 
   return (
     <div className="min-h-screen bg-motion-black text-motion-text selection:bg-motion-accent selection:text-white font-sans">
+      <GoogleAnalytics />
       <StructuredData />
       <ScrollToTop />
       <Navbar onNavigate={handleNavigate} currentPage={location.pathname === '/' ? 'home' : location.pathname.substring(1)} language={language} setLanguage={setLanguage} />
