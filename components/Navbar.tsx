@@ -31,7 +31,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPage, languag
       services: 'Services',
       app: 'Motion App',
       blog: 'The Motion Blog',
-      cta: 'Start Journey'
+      cta: 'Start Journey',
+      login: 'Log In'
     },
     es: {
       about: 'Nosotros',
@@ -39,7 +40,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPage, languag
       services: 'Servicios',
       app: 'Motion App',
       blog: 'The Motion Blog',
-      cta: 'Empezar'
+      cta: 'Empezar',
+      login: 'Ingresar'
     }
   };
 
@@ -120,13 +122,23 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPage, languag
             )}
           </div>
 
-          <Button
-            variant="primary"
-            className="py-2 px-6 text-xs font-semibold"
-            onClick={() => onNavigate('contact')}
-          >
-            {t.cta}
-          </Button>
+          <div className="flex items-center gap-4">
+            <a href="https://app.motionarehab.com" target="_blank" rel="noopener noreferrer">
+              <Button
+                variant="ghost"
+                className="py-2 px-4 text-xs font-medium text-white hover:text-motion-accent"
+              >
+                {t.login}
+              </Button>
+            </a>
+            <Button
+              variant="primary"
+              className="py-2 px-6 text-xs font-semibold"
+              onClick={() => onNavigate('contact')}
+            >
+              {t.cta}
+            </Button>
+          </div>
         </nav>
 
         {/* Mobile Menu Toggle */}
@@ -189,8 +201,11 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPage, languag
               {link.name}
             </a>
           ))}
-          <div className="mt-8 flex flex-col gap-6 items-center">
-            <Button onClick={() => { setIsOpen(false); onNavigate('contact'); }}>{t.cta}</Button>
+          <div className="mt-8 flex flex-col gap-4 items-center w-full px-10">
+            <a href="https://app.motionarehab.com" target="_blank" rel="noopener noreferrer" className="w-full">
+              <Button variant="secondary" fullWidth>{t.login}</Button>
+            </a>
+            <Button fullWidth onClick={() => { setIsOpen(false); onNavigate('contact'); }}>{t.cta}</Button>
           </div>
         </div>
       )}
