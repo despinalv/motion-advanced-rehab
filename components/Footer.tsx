@@ -23,7 +23,6 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, language, setLanguag
       about: 'About Us',
       method: 'Method',
       services: 'Services',
-      app: 'Motion App',
       blog: 'The Motion Blog',
       contact: 'Contact Us',
       privacy: 'Privacy',
@@ -37,7 +36,6 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, language, setLanguag
       about: 'Nosotros',
       method: 'Método',
       services: 'Servicios',
-      app: 'Motion App',
       blog: 'The Motion Blog',
       contact: 'Contáctanos',
       privacy: 'Privacidad',
@@ -102,7 +100,6 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, language, setLanguag
                 <li><a href="#about" onClick={(e) => handleScrollLink(e, '#about')} className="hover:text-motion-accent transition-colors text-left">{t.about}</a></li>
                 <li><a href="#method" onClick={(e) => handleScrollLink(e, '#method')} className="hover:text-motion-accent transition-colors">{t.method}</a></li>
                 <li><a href="#services" onClick={(e) => handleScrollLink(e, '#services')} className="hover:text-motion-accent transition-colors">{t.services}</a></li>
-                <li><a href="#dashboard" onClick={(e) => handleScrollLink(e, '#dashboard')} className="hover:text-motion-accent transition-colors">{t.app}</a></li>
                 <li><a href="#blog" onClick={(e) => handleScrollLink(e, '#blog')} className="hover:text-motion-accent transition-colors">{t.blog}</a></li>
               </ul>
             </div>

@@ -4,7 +4,6 @@ import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { Method } from './components/Method';
 import { Services } from './components/Services';
-import { Dashboard } from './components/Dashboard';
 import { Testimonials } from './components/Testimonials';
 import { Footer } from './components/Footer';
 import { Contact } from './components/Contact';
@@ -44,7 +43,6 @@ const HomePage = ({ language, onNavigate }: { language: 'en' | 'es', onNavigate:
       <Hero onNavigate={onNavigate} language={language} />
       <Method language={language} />
       <Services onNavigate={onNavigate} language={language} />
-      <Dashboard language={language} />
       <Testimonials language={language} />
       <About language={language} />
       <BlogSection onNavigate={onNavigate} language={language} />

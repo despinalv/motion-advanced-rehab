@@ -29,19 +29,15 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPage, languag
       about: 'About Us',
       method: 'Method',
       services: 'Services',
-      app: 'Motion App',
       blog: 'The Motion Blog',
-      cta: 'Start Journey',
-      login: 'Log In'
+      cta: 'Start Journey'
     },
     es: {
       about: 'Nosotros',
       method: 'Método',
       services: 'Servicios',
-      app: 'Motion App',
       blog: 'The Motion Blog',
-      cta: 'Empezar',
-      login: 'Ingresar'
+      cta: 'Empezar'
     }
   };
 
@@ -50,7 +46,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPage, languag
   const navLinks = [
     { name: t.method, href: '#method' },
     { name: t.services, href: '#services' },
-    { name: t.app, href: '#dashboard' },
     { name: t.about, href: '#about' },
     { name: t.blog, href: '#blog' },
   ];
@@ -123,14 +118,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPage, languag
           </div>
 
           <div className="flex items-center gap-4">
-            <a href="https://app.motionarehab.com" target="_blank" rel="noopener noreferrer">
-              <Button
-                variant="ghost"
-                className="py-2 px-4 text-xs font-medium text-white hover:text-motion-accent"
-              >
-                {t.login}
-              </Button>
-            </a>
             <Button
               variant="primary"
               className="py-2 px-6 text-xs font-semibold"
@@ -202,9 +189,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPage, languag
             </a>
           ))}
           <div className="mt-8 flex flex-col gap-4 items-center w-full px-10">
-            <a href="https://app.motionarehab.com" target="_blank" rel="noopener noreferrer" className="w-full">
-              <Button variant="secondary" fullWidth>{t.login}</Button>
-            </a>
             <Button fullWidth onClick={() => { setIsOpen(false); onNavigate('contact'); }}>{t.cta}</Button>
           </div>
         </div>
