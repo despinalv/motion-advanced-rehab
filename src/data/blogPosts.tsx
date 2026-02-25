@@ -98,33 +98,79 @@ export const blogPosts = {
 
                     <h3 className="text-xl text-white font-semibold mb-4">Scientific References & Further Reading</h3>
                     <ul className="list-disc pl-5 mb-6 text-sm text-motion-muted space-y-2">
-                        <li><em>The Jersey Sports & Spinal Clinic:</em> <a href="https://scholar.google.com/scholar?q=Back+pain+-+'Bad'+posture+is+not+the+villain" target="_blank" rel="noopener noreferrer" className="text-motion-accent hover:underline">"Back pain - 'Bad' posture is not the villain"</a></li>
-                        <li><em>Compass Health Clinic:</em> <a href="https://scholar.google.com/scholar?q=The+Myth+of+Perfect+Posture" target="_blank" rel="noopener noreferrer" className="text-motion-accent hover:underline">"The Myth of Perfect Posture"</a></li>
-                        <li><em>Physio Network:</em> <a href="https://scholar.google.com/scholar?q=A+review+of+core+stability+training+in+rehabilitation:+Facts,+fallacies+and+future+directions" target="_blank" rel="noopener noreferrer" className="text-motion-accent hover:underline">"A review of core stability training in rehabilitation: Facts, fallacies and future directions"</a></li>
-                        <li><em>ALMohiza et al. (2023):</em> <a href="https://scholar.google.com/scholar?q=The+Mediation+Effect+of+Pain+on+the+Relationship+between+Kinesiophobia+and+Lumbar+Joint+Position+Sense+in+Chronic+Low+Back+Pain+Individuals" target="_blank" rel="noopener noreferrer" className="text-motion-accent hover:underline">"The Mediation Effect of Pain on the Relationship between Kinesiophobia and Lumbar Joint Position Sense in Chronic Low Back Pain Individuals."</a> International Journal of Environmental Research and Public Health.</li>
-                        <li><em>Bordeleau et al. (2022):</em> <a href="https://scholar.google.com/scholar?q=Treatments+for+kinesiophobia+in+people+with+chronic+pain:+A+scoping+review" target="_blank" rel="noopener noreferrer" className="text-motion-accent hover:underline">"Treatments for kinesiophobia in people with chronic pain: A scoping review."</a> Frontiers in Behavioral Neuroscience.</li>
+                        <li><em>The Jersey Sports & Spinal Clinic:</em> <a href="https://www.physiojersey.com/back-pain-bad-posture-is-not-the-villain/" target="_blank" rel="noopener noreferrer" className="text-motion-accent hover:underline">"Back pain - 'Bad' posture is not the villain"</a></li>
+                        <li><em>Compass Health Clinic:</em> <a href="https://www.compasshealthclinic.co.uk/the-myth-of-perfect-posture" target="_blank" rel="noopener noreferrer" className="text-motion-accent hover:underline">"The Myth of Perfect Posture"</a></li>
+                        <li><em>Physio Network:</em> <a href="https://www.physio-network.com/blog/core-stability-training-in-rehabilitation/" target="_blank" rel="noopener noreferrer" className="text-motion-accent hover:underline">"A review of core stability training in rehabilitation: Facts, fallacies and future directions"</a></li>
+                        <li><em>ALMohiza et al. (2023):</em> <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10048100/" target="_blank" rel="noopener noreferrer" className="text-motion-accent hover:underline">"The Mediation Effect of Pain on the Relationship between Kinesiophobia and Lumbar Joint Position Sense in Chronic Low Back Pain Individuals."</a> International Journal of Environmental Research and Public Health.</li>
+                        <li><em>Bordeleau et al. (2022):</em> <a href="https://www.frontiersin.org/articles/10.3389/fnbeh.2022.933483/full" target="_blank" rel="noopener noreferrer" className="text-motion-accent hover:underline">"Treatments for kinesiophobia in people with chronic pain: A scoping review."</a> Frontiers in Behavioral Neuroscience.</li>
                     </ul>
                 </>
             )
         },
         '3': {
             id: '3',
-            slug: 'zone-2-training-strength',
-            title: "Zone 2 Training for Strength Athletes",
-            excerpt: "You lift heavy, but is your engine holding you back? How low-intensity cardio unlocks higher strength outputs.",
-            date: "Sep 15, 2024",
-            category: "Performance",
-            readTime: "7 min read",
-            author: "Mike Ross",
+            slug: 'understanding-pain-science',
+            title: "Understanding pain science",
+            excerpt: "Discover why intense pain doesn't always mean serious damage and how your emotions, stress, and fear may be amplifying what you feel.",
+            date: "2026-02-24",
+            category: "Neuroscience",
+            readTime: "5 min read",
+            author: "Sofia L.",
             image: `${import.meta.env.BASE_URL}images/blog_3.webp`,
             content: (
                 <>
-                    <p className="lead text-xl text-white font-light mb-8">
-                        You lift heavy, but is your engine holding you back? How low-intensity cardio unlocks higher strength outputs and faster recovery between sets.
+                    <p className="lead text-xl text-white font-light mb-6">
+                        Have you ever gotten an MRI for severe, crippling pain, only for the specialist to tell you: "your structure is perfect, nothing is broken"? It's a strange mix of relief and deep frustration. If there's no structural damage, why does it hurt so much?
                     </p>
-                    <p className="mb-6">
-                        Zone 2 training is performed at 60-70% of your max heart rate. It builds mitochondrial efficiency, allowing you to clear lactate faster. For a strength athlete, this means you can perform more high-quality sets with less fatigue.
+                    <p className="mb-8">
+                        For a long time, medicine believed in Descartes' model: the body is a machine, and if there is pain, there must be a broken part. Today we know this is far from reality. Pain is an experience naturally produced 100% by the brain, and its goal is not to measure damage, but to protect you.
                     </p>
+
+                    <h3 className="text-2xl text-white font-semibold mt-10 mb-4">The hypersensitive alarm system</h3>
+                    <p className="mb-4">
+                        Imagine the nervous system as your home's fire alarm. Its function is to sound loudly when there is a fire (a real injury). However, when we experience persistent pain, this alarm gets uncalibrated. Suddenly, you no longer need a fire for it to go off; the simple smoke from burnt toast (a harmless movement) triggers the siren at full volume.
+                    </p>
+                    <p className="mb-8">
+                        This neurological phenomenon is known as <em>central sensitization</em>. Your nervous system becomes hyper-vigilant, and pain pathways become so efficient that they begin to send danger signals to normal stimuli, like bending down to pick up a pencil or walking. The pain is very real, but the physical tissue is no longer in danger.
+                    </p>
+
+                    <h3 className="text-2xl text-white font-semibold mt-10 mb-4">The psychological amplifier: Fear and Frustration</h3>
+                    <p className="mb-4">
+                        This is where the science gets fascinating (and crucial for your recovery). Pain is not only physical; it is a biopsychosocial experience. The areas of your brain that process physical pain share direct pathways with the areas that process fear, anxiety, stress, and frustration.
+                    </p>
+                    <p className="mb-8">
+                        If you believe your pain means your body is destroying itself, your brain perceives a massive threat and, in response, "turns up the volume" of the pain to force you to stop. Chronic work stress, lack of sleep, depression, and the frustration of not being able to do your daily activities act like gasoline for the nervous system's fire. You are not imagining it: psychology and emotions literally alter the neurochemistry of your pain.
+                    </p>
+
+                    <h3 className="text-2xl text-white font-semibold mt-10 mb-4">Graded Exposure: Recalibrating the brain</h3>
+                    <p className="mb-4">
+                        If complete rest and avoiding movement do not heal persistent pain (and even make it worse by deconditioning the muscles), what is the solution? The answer lies in showing your brain that movement is safe through <em>graded exposure</em>.
+                    </p>
+                    <p className="mb-8">
+                        Graded exposure involves slowly reintroducing the movements you fear, in tolerable doses. By moving without suffering catastrophic damage, you send your brain new safety information. Gradually, the alarm begins to turn off, confidence returns, and the pain volume decreases.
+                    </p>
+
+                    <h3 className="text-2xl text-white font-semibold mt-10 mb-4">3 Practical steps to get started</h3>
+                    <ol className="list-decimal pl-5 mb-8 text-motion-muted space-y-3">
+                        <li><strong>Recognize that pain does not equal damage:</strong> Feeling discomfort when doing a new exercise or resuming an activity does not mean you are injuring yourself. Often, it is just your nervous system being overprotective.</li>
+                        <li><strong>Identify your amplifiers:</strong> Observe what happens to your pain on the days you are more stressed, anxious, or sleep poorly. Stress management is a pain treatment in itself.</li>
+                        <li><strong>Apply the traffic light rule:</strong> When moving, mild pain (green light) or moderate pain that disappears quickly (yellow light) is acceptable and safe. You should only stop if the pain is sharp, disabling, and long-lasting (red light).</li>
+                    </ol>
+
+                    <p className="mb-8 italic border-l-4 border-motion-accent pl-4 py-2 bg-white/5 rounded-r-lg">
+                        At <strong>Motion - advanced rehab</strong>, we know chronic pain can be lonely and frustrating. Our goal is not just to treat your tissues, but to teach you to understand your pain so it stops controlling you. Through education and guided movement, we help you recalibrate your system so you can return to doing what you love.
+                    </p>
+
+                    <hr className="border-white/10 my-8" />
+
+                    <h3 className="text-xl text-white font-semibold mb-4">Scientific References & Further Reading</h3>
+                    <ul className="list-disc pl-5 mb-6 text-sm text-motion-muted space-y-2">
+                        <li><em>Moseley, G. L. (2007):</em> <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4589930/" target="_blank" rel="noopener noreferrer" className="text-motion-accent hover:underline">"Reconceptualising pain according to modern pain science."</a> Physical Therapy Reviews.</li>
+                        <li><em>Louw, A., et al. (2011):</em> <a href="https://www.tandfonline.com/doi/abs/10.3109/09593985.2011.562304" target="_blank" rel="noopener noreferrer" className="text-motion-accent hover:underline">"The efficacy of pain neuroscience education on musculoskeletal pain: A systematic review of the literature."</a> Physiotherapy Theory and Practice.</li>
+                        <li><em>Nijs, J., et al. (2012):</em> <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3560667/" target="_blank" rel="noopener noreferrer" className="text-motion-accent hover:underline">"Thinking beyond muscles and joints: therapists' and patients' attitudes and beliefs regarding chronic musculoskeletal pain are key to applying effective treatment."</a> Manual Therapy.</li>
+                        <li><em>Malfliet, A., et al. (2018):</em> <a href="https://jamanetwork.com/journals/jamaneurology/fullarticle/2679805" target="_blank" rel="noopener noreferrer" className="text-motion-accent hover:underline">"Effect of Pain Neuroscience Education Combined With Cognition-Targeted Motor Control Training on Chronic Spinal Pain: A Randomized Clinical Trial."</a> JAMA Neurology.</li>
+                        <li><em>Vlaeyen, J. W., & Linton, S. J. (2000):</em> <a href="https://pubmed.ncbi.nlm.nih.gov/10781906/" target="_blank" rel="noopener noreferrer" className="text-motion-accent hover:underline">"Fear-avoidance and its consequences in chronic musculoskeletal pain: a state of the art."</a> Pain.</li>
+                    </ul>
                 </>
             )
         },
@@ -267,30 +313,79 @@ export const blogPosts = {
 
                     <h3 className="text-xl text-white font-semibold mb-4">Referencias Científicas y Lectura Adicional</h3>
                     <ul className="list-disc pl-5 mb-6 text-sm text-motion-muted space-y-2">
-                        <li><em>The Jersey Sports & Spinal Clinic:</em> <a href="https://scholar.google.com/scholar?q=Back+pain+-+'Bad'+posture+is+not+the+villain" target="_blank" rel="noopener noreferrer" className="text-motion-accent hover:underline">"Back pain - 'Bad' posture is not the villain"</a></li>
-                        <li><em>Compass Health Clinic:</em> <a href="https://scholar.google.com/scholar?q=The+Myth+of+Perfect+Posture" target="_blank" rel="noopener noreferrer" className="text-motion-accent hover:underline">"The Myth of Perfect Posture"</a></li>
-                        <li><em>Physio Network:</em> <a href="https://scholar.google.com/scholar?q=A+review+of+core+stability+training+in+rehabilitation:+Facts,+fallacies+and+future+directions" target="_blank" rel="noopener noreferrer" className="text-motion-accent hover:underline">"A review of core stability training in rehabilitation: Facts, fallacies and future directions"</a></li>
-                        <li><em>ALMohiza et al. (2023):</em> <a href="https://scholar.google.com/scholar?q=The+Mediation+Effect+of+Pain+on+the+Relationship+between+Kinesiophobia+and+Lumbar+Joint+Position+Sense+in+Chronic+Low+Back+Pain+Individuals" target="_blank" rel="noopener noreferrer" className="text-motion-accent hover:underline">"The Mediation Effect of Pain on the Relationship between Kinesiophobia and Lumbar Joint Position Sense in Chronic Low Back Pain Individuals."</a> International Journal of Environmental Research and Public Health.</li>
-                        <li><em>Bordeleau et al. (2022):</em> <a href="https://scholar.google.com/scholar?q=Treatments+for+kinesiophobia+in+people+with+chronic+pain:+A+scoping+review" target="_blank" rel="noopener noreferrer" className="text-motion-accent hover:underline">"Treatments for kinesiophobia in people with chronic pain: A scoping review."</a> Frontiers in Behavioral Neuroscience.</li>
+                        <li><em>The Jersey Sports & Spinal Clinic:</em> <a href="https://www.physiojersey.com/back-pain-bad-posture-is-not-the-villain/" target="_blank" rel="noopener noreferrer" className="text-motion-accent hover:underline">"Back pain - 'Bad' posture is not the villain"</a></li>
+                        <li><em>Compass Health Clinic:</em> <a href="https://www.compasshealthclinic.co.uk/the-myth-of-perfect-posture" target="_blank" rel="noopener noreferrer" className="text-motion-accent hover:underline">"The Myth of Perfect Posture"</a></li>
+                        <li><em>Physio Network:</em> <a href="https://www.physio-network.com/blog/core-stability-training-in-rehabilitation/" target="_blank" rel="noopener noreferrer" className="text-motion-accent hover:underline">"A review of core stability training in rehabilitation: Facts, fallacies and future directions"</a></li>
+                        <li><em>ALMohiza et al. (2023):</em> <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10048100/" target="_blank" rel="noopener noreferrer" className="text-motion-accent hover:underline">"The Mediation Effect of Pain on the Relationship between Kinesiophobia and Lumbar Joint Position Sense in Chronic Low Back Pain Individuals."</a> International Journal of Environmental Research and Public Health.</li>
+                        <li><em>Bordeleau et al. (2022):</em> <a href="https://www.frontiersin.org/articles/10.3389/fnbeh.2022.933483/full" target="_blank" rel="noopener noreferrer" className="text-motion-accent hover:underline">"Treatments for kinesiophobia in people with chronic pain: A scoping review."</a> Frontiers in Behavioral Neuroscience.</li>
                     </ul>
                 </>
             )
         },
         '3': {
             id: '3',
-            slug: 'entrenamiento-zona-2-fuerza',
-            title: "Entrenamiento en Zona 2 para Atletas de Fuerza",
-            excerpt: "Levantas pesado, pero ¿tu motor te limita? Cómo el cardio de baja intensidad desbloquea mayor fuerza.",
-            date: "15 Sep, 2024",
-            category: "Rendimiento",
-            readTime: "7 min lectura",
-            author: "Mike Ross",
+            slug: 'entendiendo-ciencia-dolor',
+            title: "Entendiendo la ciencia del dolor",
+            excerpt: "Descubre por qué el dolor intenso no siempre significa un daño grave y cómo tus emociones, el estrés y el miedo pueden estar amplificando lo que sientes.",
+            date: "2026-02-24",
+            category: "Neurociencia",
+            readTime: "5 min lectura",
+            author: "Sofia L.",
             image: `${import.meta.env.BASE_URL}images/blog_3.webp`,
             content: (
                 <>
-                    <p className="lead text-xl text-white font-light mb-8">
-                        Levantas pesado, pero ¿tu motor te limita? Cómo el cardio de baja intensidad desbloquea mayor fuerza y recuperación más rápida entre series.
+                    <p className="lead text-xl text-white font-light mb-6">
+                        ¿Alguna vez te has hecho una resonancia magnética por un dolor intenso y paralizante, solo para que el especialista te diga: "tu estructura está perfecta, no tienes nada roto"? Es una mezcla extraña de alivio y frustración profunda. Si no hay daño estructural, ¿por qué duele tanto?
                     </p>
+                    <p className="mb-8">
+                        Durante mucho tiempo, la medicina creyó en el modelo de Descartes: el cuerpo es una máquina, y si hay dolor, debe haber una pieza rota. Hoy sabemos que esto está muy lejos de la realidad. El dolor es una experiencia 100% producida por el cerebro, y su objetivo no es medir el daño, sino protegerte.
+                    </p>
+
+                    <h3 className="text-2xl text-white font-semibold mt-10 mb-4">El sistema de alarma hipersensible</h3>
+                    <p className="mb-4">
+                        Imagina que el sistema nervioso es como la alarma de incendios de tu casa. Su función es sonar fuerte cuando hay fuego (una lesión real). Sin embargo, cuando experimentamos dolor persistente, esta alarma se descalibra. De repente, ya no necesitas un incendio para que suene; el simple humo de una tostada quemada (un movimiento inofensivo) activa la sirena a todo volumen.
+                    </p>
+                    <p className="mb-8">
+                        A este fenómeno neurológico se le conoce como <em>sensibilización central</em>. Tu sistema nervioso se vuelve hipervigilante y las vías del dolor se vuelven tan eficientes que comienzan a enviar señales de peligro ante estímulos normales, como agacharse a recoger un lápiz o caminar. El dolor es muy real, pero el tejido físico ya no está en peligro.
+                    </p>
+
+                    <h3 className="text-2xl text-white font-semibold mt-10 mb-4">El amplificador psicológico: Miedo y Frustración</h3>
+                    <p className="mb-4">
+                        Aquí es donde la ciencia se vuelve fascinante (y crucial para tu recuperación). El dolor no solo es físico; es una experiencia biopsicosocial. Las áreas de tu cerebro que procesan el dolor físico comparten vías directas con las áreas que procesan el miedo, la ansiedad, el estrés y la frustración.
+                    </p>
+                    <p className="mb-8">
+                        Si crees que tu dolor significa que tu cuerpo se está destruyendo, tu cerebro percibe una amenaza masiva y, en respuesta, "sube el volumen" del dolor para obligarte a parar. El estrés laboral crónico, la falta de sueño, la depresión y la frustración de no poder hacer tus actividades diarias actúan como gasolina para el fuego del sistema nervioso. No te lo estás imaginando: la psicología y las emociones alteran literalmente la neuroquímica de tu dolor.
+                    </p>
+
+                    <h3 className="text-2xl text-white font-semibold mt-10 mb-4">Exposición Gradual: Recalibrando el cerebro</h3>
+                    <p className="mb-4">
+                        Si el reposo absoluto y evitar el movimiento no curan el dolor persistente (e incluso lo empeoran al desacondicionar los músculos), ¿cuál es la solución? La respuesta está en demostrarle a tu cerebro que el movimiento es seguro a través de la <em>exposición gradual</em>.
+                    </p>
+                    <p className="mb-8">
+                        La exposición gradual consiste en reintroducir lentamente los movimientos que temes, en dosis tolerables. Al moverte sin sufrir un daño catastrófico, le envías a tu cerebro nueva información de seguridad. Poco a poco, la alarma comienza a apagarse, la confianza regresa y el volumen del dolor disminuye.
+                    </p>
+
+                    <h3 className="text-2xl text-white font-semibold mt-10 mb-4">3 Pasos Prácticos para empezar</h3>
+                    <ol className="list-decimal pl-5 mb-8 text-motion-muted space-y-3">
+                        <li><strong>Reconoce que dolor no equivale a daño:</strong> Sentir molestias al hacer un ejercicio nuevo o al retomar una actividad no significa que te estés lesionando. A menudo, es solo tu sistema nervioso siendo sobreprotector.</li>
+                        <li><strong>Identifica tus amplificadores:</strong> Observa qué sucede con tu dolor los días que estás más estresado, ansioso o duermes mal. Gestionar el estrés es un tratamiento para el dolor en sí mismo.</li>
+                        <li><strong>Aplica la regla del semáforo:</strong> Al moverte, un dolor leve (luz verde) o moderado que desaparece rápido (luz amarilla) es aceptable y seguro. Solo debes detenerte si el dolor es agudo, incapacitante y duradero (luz roja).</li>
+                    </ol>
+
+                    <p className="mb-8 italic border-l-4 border-motion-accent pl-4 py-2 bg-white/5 rounded-r-lg">
+                        En <strong>Motion - advanced rehab</strong>, sabemos que el dolor crónico puede ser solitario y frustrante. Nuestro objetivo no es solo tratar tus tejidos, sino enseñarte a entender tu dolor para que deje de controlarte. A través de la educación y el movimiento guiado, te ayudamos a recalibrar tu sistema para que vuelvas a hacer lo que amas.
+                    </p>
+
+                    <hr className="border-white/10 my-8" />
+
+                    <h3 className="text-xl text-white font-semibold mb-4">Referencias Científicas y Lectura Adicional</h3>
+                    <ul className="list-disc pl-5 mb-6 text-sm text-motion-muted space-y-2">
+                        <li><em>Moseley, G. L. (2007):</em> <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4589930/" target="_blank" rel="noopener noreferrer" className="text-motion-accent hover:underline">"Reconceptualising pain according to modern pain science."</a> Physical Therapy Reviews.</li>
+                        <li><em>Louw, A., et al. (2011):</em> <a href="https://www.tandfonline.com/doi/abs/10.3109/09593985.2011.562304" target="_blank" rel="noopener noreferrer" className="text-motion-accent hover:underline">"The efficacy of pain neuroscience education on musculoskeletal pain: A systematic review of the literature."</a> Physiotherapy Theory and Practice.</li>
+                        <li><em>Nijs, J., et al. (2012):</em> <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3560667/" target="_blank" rel="noopener noreferrer" className="text-motion-accent hover:underline">"Thinking beyond muscles and joints: therapists' and patients' attitudes and beliefs regarding chronic musculoskeletal pain are key to applying effective treatment."</a> Manual Therapy.</li>
+                        <li><em>Malfliet, A., et al. (2018):</em> <a href="https://jamanetwork.com/journals/jamaneurology/fullarticle/2679805" target="_blank" rel="noopener noreferrer" className="text-motion-accent hover:underline">"Effect of Pain Neuroscience Education Combined With Cognition-Targeted Motor Control Training on Chronic Spinal Pain: A Randomized Clinical Trial."</a> JAMA Neurology.</li>
+                        <li><em>Vlaeyen, J. W., & Linton, S. J. (2000):</em> <a href="https://pubmed.ncbi.nlm.nih.gov/10781906/" target="_blank" rel="noopener noreferrer" className="text-motion-accent hover:underline">"Fear-avoidance and its consequences in chronic musculoskeletal pain: a state of the art."</a> Pain.</li>
+                    </ul>
                 </>
             )
         },
