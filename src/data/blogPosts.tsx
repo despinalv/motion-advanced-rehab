@@ -192,21 +192,76 @@ export const blogPosts = {
                 </>
             )
         },
-        '5': {
+'5': {
             id: '5',
             slug: 'mobility-vs-flexibility',
-            title: "Mobility vs. Flexibility",
-            excerpt: "Flexibility is passive range of motion. Mobility is active control over that range.",
-            date: "Aug 10, 2024",
-            category: "Biomechanics",
-            readTime: "4 min read",
-            author: "Sarah Jenkins",
+            title: "Mobility vs Flexibility: Why stretching isn't always the answer",
+            excerpt: "Discover the difference between flexibility and mobility, and why your body doesn't need to be stretched constantly, but rather challenged with active movement and motor control.",
+            date: "2026-02-24",
+            category: "Movement",
+            readTime: "6 min read",
+            author: "Sofia L.",
             image: `${import.meta.env.BASE_URL}images/blog_5.webp`,
             content: (
                 <>
-                    <p className="lead text-xl text-white font-light mb-8">
-                        Flexibility is passive range of motion. Mobility is active control over that range.
+                    <p className="lead text-xl text-white font-light mb-6">
+                        You wake up on a Monday morning and, as you reach down to grab your socks from the floor, you feel that sharp tug in the back of your thigh. Your immediate reaction is what everyone thinks: "I'm not flexible enough." You spend the next five minutes stretching hard, suffering a little, hoping that muscle will finally give in and lengthen. You feel a relief that lasts exactly as long as it takes to get to the kitchen for coffee, and then, the stiffness returns.
                     </p>
+                    <p className="mb-8">
+                        It is a constant frustration. Many patients come to Motion - advanced rehab with the idea that their body is a rigid structure, almost like glass that is about to break if it isn't stretched daily. But I want to tell you something important: your body is not fragile. It is an incredibly strong and adaptable structure that, sometimes, just needs a different strategy.
+                    </p>
+
+                    <h3 className="text-2xl text-white font-semibold mt-10 mb-4">The difference between reaching and controlling</h3>
+                    <p className="mb-4">
+                        We often use these words as if they were the same, but in the world of physiotherapy, we distinguish them clearly because the approach changes completely.
+                    </p>
+                    <p className="mb-4">
+                        <strong>Flexibility</strong> is the passive range. In other words, how far your muscle goes when something external pushes it. If I lay you on the table and lift your leg, that is flexibility. It is simply the ability of your tissues to stretch.
+                    </p>
+                    <p className="mb-4">
+                        <strong>Mobility</strong> is something much more interesting. It is the active range. It is about how far you can move a joint on your own, using your own strength and control. This is where motor control comes in, which is nothing more than your brain's ability to organize your muscles and move safely.
+                    </p>
+                    <p className="mb-8">
+                        If you have a lot of flexibility but little mobility, you have a control problem. Your brain detects that you are not able to manage the joint at extreme angles and, to protect you, it "tightens" the muscle. That stiffness you feel isn't because the muscle is short; it's your nervous system pulling the handbrake.
+                    </p>
+
+                    <h3 className="text-2xl text-white font-semibold mt-10 mb-4">Your body doesn't need to be fixed, it needs to be challenged</h3>
+                    <p className="mb-4">
+                        There is a myth that we are "misaligned" or that we need someone to "put us back in place." The reality is that the body responds to tissue load. This technical term simply refers to the amount of stress your muscles and tendons can handle.
+                    </p>
+                    <p className="mb-8">
+                        When you increase your mobility, you are teaching your nervous system that those ranges of motion are safe. We aren't looking for you to be made of rubber; we want you to be able to move in many different directions. Movement variability is our best tool against pain: the more varied the way you move, the more resilient your body becomes.
+                    </p>
+
+                    <h3 className="text-2xl text-white font-semibold mt-10 mb-4">3 Practical Tips</h3>
+                    <p className="mb-4">
+                        If you want to stop feeling "stuck" and start moving fluidly, try changing your approach with these three steps:
+                    </p>
+                    <ol className="list-decimal pl-5 mb-8 text-motion-muted space-y-3">
+                        <li><strong>Prioritize active movement over classic stretching:</strong> Instead of staying still pulling on a foot for a minute, try slow and controlled movements that take the joint to its limit. For example, a very deep and paused squat works your mobility much better than any floor stretch.</li>
+                        <li><strong>Add strength in long positions:</strong> Muscles feel safe when they are strong. Doing strength exercises while the muscle is stretched helps the brain release that "handbrake" I mentioned earlier.</li>
+                        <li><strong>Do not be afraid of movement:</strong> Sometimes we avoid moving because something bothers us, and that only increases stiffness. Look for movements that do not cause you pain but take you out of your usual comfort zone.</li>
+                    </ol>
+
+                    <h3 className="text-2xl text-white font-semibold mt-10 mb-4">The path to confidence</h3>
+                    <p className="mb-8 italic border-l-4 border-motion-accent pl-4 py-2 bg-white/5 rounded-r-lg">
+                        At <strong>Motion - advanced rehab</strong>, we work under a very clear philosophy: we want you to regain confidence in yourself. You are not broken and you do not need temporary solutions. The goal is for you to understand how your body works so that you can move without fear, without restrictions, and with the security that you are capable of facing any physical challenge.
+                    </p>
+                    <p className="mb-8">
+                        If you feel like you've tried every stretch in the world and you're still the same, maybe it's time to look beyond flexibility.
+                    </p>
+                    <p className="mb-8 font-semibold text-motion-accent hover:underline cursor-pointer">
+                        Book an Evaluation
+                    </p>
+
+                    <hr className="border-white/10 my-8" />
+
+                    <h3 className="text-xl text-white font-semibold mb-4">Scientific References & Further Reading</h3>
+                    <ul className="list-disc pl-5 mb-6 text-sm text-motion-muted space-y-2">
+                        <li><em>Behm, D. G., et al. (2016):</em> <a href="https://scholar.google.com/scholar?q=Acute+effects+of+muscle+stretching+on+physical+performance,+range+of+motion,+and+injury+incidence+in+healthy+active+individuals:+a+systematic+review" target="_blank" rel="noopener noreferrer" className="text-motion-accent hover:underline">"Acute effects of muscle stretching on physical performance, range of motion, and injury incidence in healthy active individuals: a systematic review."</a> Applied Physiology, Nutrition, and Metabolism.</li>
+                        <li><em>Nuzzo, J. L. (2020):</em> <a href="https://scholar.google.com/scholar?q=The+Case+for+Retiring+Flexibility+as+a+Major+Component+of+Physical+Fitness" target="_blank" rel="noopener noreferrer" className="text-motion-accent hover:underline">"The Case for Retiring Flexibility as a Major Component of Physical Fitness."</a> Sports Medicine.</li>
+                        <li><em>Afonso, J., et al. (2021):</em> <a href="https://scholar.google.com/scholar?q=The+Effectiveness+of+Joint+Mobilization+Techniques+in+Improving+Range+of+Motion:+A+Systematic+Review" target="_blank" rel="noopener noreferrer" className="text-motion-accent hover:underline">"The Effectiveness of Joint Mobilization Techniques in Improving Range of Motion: A Systematic Review."</a> Journal of Clinical Medicine.</li>
+                    </ul>
                 </>
             )
         },
@@ -407,21 +462,76 @@ export const blogPosts = {
                 </>
             )
         },
-        '5': {
+'5': {
             id: '5',
             slug: 'movilidad-vs-flexibilidad',
-            title: "Movilidad vs. Flexibilidad",
-            excerpt: "La flexibilidad es rango de movimiento pasivo. La movilidad es control activo sobre ese rango.",
-            date: "10 Ago, 2024",
-            category: "Biomecánica",
-            readTime: "4 min lectura",
-            author: "Sarah Jenkins",
+            title: "Movilidad vs Flexibilidad: ¿Por qué estirar no siempre es la solución?",
+            excerpt: "Descubre la diferencia entre flexibilidad y movilidad, y por qué tu cuerpo no necesita que lo estiren constantemente, sino que lo desafíen con movimiento activo y control motor.",
+            date: "2026-02-24",
+            category: "Movimiento",
+            readTime: "6 min lectura",
+            author: "Sofia L.",
             image: `${import.meta.env.BASE_URL}images/blog_5.webp`,
             content: (
                 <>
-                    <p className="lead text-xl text-white font-light mb-8">
-                        La flexibilidad es rango de movimiento pasivo. La movilidad es control activo sobre ese rango.
+                    <p className="lead text-xl text-white font-light mb-6">
+                        Te despiertas un lunes por la mañana y, al intentar agacharte para recoger los calcetines del suelo, notas ese tirón seco en la parte de atrás del muslo. Tu reacción inmediata es la de casi todo el mundo: "Me falta flexibilidad". Te pasas los siguientes cinco minutos estirando con fuerza, sufriendo un poco, esperando que ese músculo se rinda y se alargue. Sientes un alivio que dura exactamente lo que tardas en llegar a la cocina a por café, y luego, la rigidez vuelve.
                     </p>
+                    <p className="mb-8">
+                        Es una frustración constante. Muchos pacientes llegan a Motion - advanced rehab con la idea de que su cuerpo es una estructura rígida, casi como un cristal que está a punto de romperse si no se estira a diario. Pero quiero decirte algo importante: tu cuerpo no es frágil. Es una estructura increíblemente fuerte y adaptable que, a veces, simplemente necesita una estrategia distinta.
+                    </p>
+
+                    <h3 className="text-2xl text-white font-semibold mt-10 mb-4">La diferencia entre llegar y controlar</h3>
+                    <p className="mb-4">
+                        Solemos usar estas palabras como si fueran lo mismo, pero en el mundo de la fisioterapia las distinguimos con mucha claridad porque el tratamiento cambia por completo.
+                    </p>
+                    <p className="mb-4">
+                        La <strong>flexibilidad</strong> es el rango pasivo. Es decir, hasta dónde llega tu músculo cuando algo externo lo empuja. Si yo te tumbo en la camilla y subo tu pierna, eso es flexibilidad. Es simplemente la capacidad de tus tejidos para estirarse.
+                    </p>
+                    <p className="mb-4">
+                        La <strong>movilidad</strong> es algo mucho más interesante. Es el rango activo. Se trata de hasta dónde puedes mover una articulación tú solo, usando tu propia fuerza y control. Aquí es donde entra el control motor, que no es más que la capacidad de tu cerebro para organizar tus músculos y moverte con seguridad.
+                    </p>
+                    <p className="mb-8">
+                        Si tienes mucha flexibilidad pero poca movilidad, tienes un problema de control. Tu cerebro detecta que no eres capaz de manejar la articulación en ángulos extremos y, para protegerte, "aprieta" el músculo. Esa rigidez que sientes no es que el músculo sea corto, es tu sistema nervioso echando el freno de mano.
+                    </p>
+
+                    <h3 className="text-2xl text-white font-semibold mt-10 mb-4">Tu cuerpo no necesita que lo reparen, necesita que lo desafíen</h3>
+                    <p className="mb-4">
+                        Existe el mito de que estamos "desalineados" o que necesitamos que alguien nos "coloque". La realidad es que el cuerpo responde a la carga de tejido. Este término técnico se refiere simplemente a la cantidad de esfuerzo que tus músculos y tendones pueden soportar.
+                    </p>
+                    <p className="mb-8">
+                        Cuando aumentas tu movilidad, le estás enseñando a tu sistema nervioso que esos rangos de movimiento son seguros. No buscamos que seas de goma, buscamos que seas capaz de moverte en muchas direcciones distintas. La variabilidad de movimiento es nuestra mejor herramienta contra el dolor: cuanto más variada sea la forma en que te mueves, más resiliente será tu cuerpo.
+                    </p>
+
+                    <h3 className="text-2xl text-white font-semibold mt-10 mb-4">3 Consejos Prácticos</h3>
+                    <p className="mb-4">
+                        Si quieres dejar de sentirte "trabado" y empezar a moverte con fluidez, prueba a cambiar tu enfoque con estos tres pasos:
+                    </p>
+                    <ol className="list-decimal pl-5 mb-8 text-motion-muted space-y-3">
+                        <li><strong>Prioriza el movimiento activo sobre el estiramiento clásico:</strong> En lugar de quedarte quieto tirando de un pie durante un minuto, intenta hacer movimientos lentos y controlados que lleven a la articulación a su límite. Por ejemplo, una sentadilla muy profunda y pausada trabaja mucho mejor tu movilidad que cualquier estiramiento de suelo.</li>
+                        <li><strong>Añade fuerza en posiciones largas:</strong> Los músculos se sienten seguros cuando son fuertes. Hacer ejercicios de fuerza cuando el músculo está estirado ayuda a que el cerebro suelte ese "freno de mano" que mencionaba antes.</li>
+                        <li><strong>No le tengas miedo al movimiento:</strong> A veces evitamos movernos porque algo nos molesta, y eso solo aumenta la rigidez. Busca movimientos que no te causen dolor pero que te saquen de tu zona de confort habitual.</li>
+                    </ol>
+
+                    <h3 className="text-2xl text-white font-semibold mt-10 mb-4">El camino hacia la confianza</h3>
+                    <p className="mb-8 italic border-l-4 border-motion-accent pl-4 py-2 bg-white/5 rounded-r-lg">
+                        En <strong>Motion - advanced rehab</strong> trabajamos bajo una filosofía muy clara: queremos que recuperes la confianza en ti mismo. No estás roto y no necesitas soluciones temporales. El objetivo es que entiendas cómo funciona tu cuerpo para que puedas moverte sin miedo, sin restricciones y con la seguridad de que eres capaz de afrontar cualquier reto físico.
+                    </p>
+                    <p className="mb-8">
+                        Si sientes que has probado todos los estiramientos del mundo y sigues igual, quizá es momento de mirar más allá de la flexibilidad.
+                    </p>
+                    <p className="mb-8 font-semibold text-motion-accent hover:underline cursor-pointer">
+                        Reservar Evaluación
+                    </p>
+
+                    <hr className="border-white/10 my-8" />
+
+                    <h3 className="text-xl text-white font-semibold mb-4">Referencias Científicas y Lectura Adicional</h3>
+                    <ul className="list-disc pl-5 mb-6 text-sm text-motion-muted space-y-2">
+                        <li><em>Behm, D. G., et al. (2016):</em> <a href="https://scholar.google.com/scholar?q=Acute+effects+of+muscle+stretching+on+physical+performance,+range+of+motion,+and+injury+incidence+in+healthy+active+individuals:+a+systematic+review" target="_blank" rel="noopener noreferrer" className="text-motion-accent hover:underline">"Acute effects of muscle stretching on physical performance, range of motion, and injury incidence in healthy active individuals: a systematic review."</a> Applied Physiology, Nutrition, and Metabolism.</li>
+                        <li><em>Nuzzo, J. L. (2020):</em> <a href="https://scholar.google.com/scholar?q=The+Case+for+Retiring+Flexibility+as+a+Major+Component+of+Physical+Fitness" target="_blank" rel="noopener noreferrer" className="text-motion-accent hover:underline">"The Case for Retiring Flexibility as a Major Component of Physical Fitness."</a> Sports Medicine.</li>
+                        <li><em>Afonso, J., et al. (2021):</em> <a href="https://scholar.google.com/scholar?q=The+Effectiveness+of+Joint+Mobilization+Techniques+in+Improving+Range+of+Motion:+A+Systematic+Review" target="_blank" rel="noopener noreferrer" className="text-motion-accent hover:underline">"The Effectiveness of Joint Mobilization Techniques in Improving Range of Motion: A Systematic Review."</a> Journal of Clinical Medicine.</li>
+                    </ul>
                 </>
             )
         },
