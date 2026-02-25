@@ -49,7 +49,7 @@ export const blogPosts = {
             category: "Biomechanics",
             readTime: "5 min read",
             author: "Sofia L.",
-            image: `${import.meta.env.BASE_URL}images/postura_mito.jpg`,
+            image: `${import.meta.env.BASE_URL}images/blog_2.webp`,
             content: (
                 <>
                     <p className="lead text-xl text-white font-light mb-6">
@@ -218,7 +218,7 @@ export const blogPosts = {
             category: "Biomecánica",
             readTime: "5 min lectura",
             author: "Sofia L.",
-            image: `${import.meta.env.BASE_URL}images/postura_mito.jpg`,
+            image: `${import.meta.env.BASE_URL}images/blog_2.webp`,
             content: (
                 <>
                     <p className="lead text-xl text-white font-light mb-6">
